@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MOWEBS</string>
+
+    <string-array name="chatvalue_dummy">
+        <item>
+            <item>8.10</item>
+            <item>Hello</item>
+        </item>
+    </string-array>
+
 </resources>
