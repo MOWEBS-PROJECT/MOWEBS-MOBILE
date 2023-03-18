@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">MOWEBS</string>
+    <string name="app_name">maryetha</string>
+    <string name="order"><b>Order Details</b></string>
+    <string name="customer">Fahmi Rizky\n(+62) 890-6767-0909\nJl. Imam Bonjol No.10, RT.1/RW.7, Babakan, Kota Bogor,  Bogor Tengah, Jawa Barat, ID, 16128</string>
+    <string name="payment_met"><b>Payment Method</b></string>
+    <string name="cash">cash</string>
+    <string name="order_id_a2">Order ID                                                                        A26876592D33</string>
+    <string name="order_time_">Order Time                                                                           12-02-2023  10:35</string>
+    <string name="pay_time_">Payment Time                                                                     12-02-2023  10:37</string>
+    <string name="ship_time_">Ship Time                                                                             13-02-2023  09:00</string>
+    <string name="completed_time_">Order Time                                                                           13-02-2023  10:30</string>
 </resources>
