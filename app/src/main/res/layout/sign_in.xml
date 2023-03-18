@@ -234,7 +234,7 @@
 					android:gravity="center">
 
 					<androidx.appcompat.widget.AppCompatButton
-						android:id="@+id/rectangle_7"
+						android:id="@+id/sign_in_ek4"
 						android:layout_width="350dp"
 						android:layout_height="60dp"
 						android:background="@drawable/rectangle_7_shape"
