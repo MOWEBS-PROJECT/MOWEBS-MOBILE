@@ -25,7 +25,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.ImageView;
 
-public class dashboard_activity extends Activity {
+public class DashboardActivity extends Activity {
 
 	
 	private View _bg__dashboard_ek2;

@@ -18,6 +18,7 @@
 package com.example.mowebs;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 
@@ -25,7 +26,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.ImageView;
 
-public class sign_in_activity extends Activity {
+public class SignInActivity extends Activity {
 
 	
 	private View _bg__sign_in_ek2;
@@ -72,15 +73,22 @@ public class sign_in_activity extends Activity {
 		battery = (ImageView) findViewById(R.id.battery);
 		phone = (ImageView) findViewById(R.id.phone);
 		don_t_have_an_account__sign_up = (TextView) findViewById(R.id.don_t_have_an_account__sign_up);
-		rectangle_7 = (View) findViewById(R.id.rectangle_7);
-		sign_in_ek4 = (TextView) findViewById(R.id.sign_in_ek4);
+		sign_in_ek4 = (TextView) findViewById(R.id.sign_in_ek4); //SignIn Button
 		forgot_password__ = (TextView) findViewById(R.id.forgot_password__);
 		remember_me_ek1 = (TextView) findViewById(R.id.remember_me_ek1);
 		rectangle_5 = (View) findViewById(R.id.rectangle_5);
 	
 		
 		//custom code goes here
-	
+		sign_in_ek4.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				Intent intent = new Intent(SignInActivity.this, DashboardActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 }
 	

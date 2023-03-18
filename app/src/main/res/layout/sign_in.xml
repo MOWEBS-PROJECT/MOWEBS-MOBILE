@@ -227,11 +227,20 @@
 
 				<RelativeLayout
 					android:id="@+id/sign_in_"
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:layout_marginStart="61dp"
-					android:layout_marginTop="680dp">
+					android:layout_marginStart="1dp"
+					android:layout_marginTop="680dp"
+					android:gravity="center">
 
+					<androidx.appcompat.widget.AppCompatButton
+						android:id="@+id/sign_in_ek4"
+						android:layout_width="350dp"
+						android:layout_height="60dp"
+						android:background="@drawable/rectangle_7_shape"
+						android:text="@string/sign_in_ek4_string"
+
+						/>
 					<TextView
 						android:id="@+id/don_t_have_an_account__sign_up"
 						android:layout_width="258.5dp"
@@ -244,24 +253,7 @@
 
 				</RelativeLayout>
 
-				<View   android:id="@+id/rectangle_7"
-					android:background="@drawable/rectangle_7_shape"
-					 android:layout_marginStart="28dp"
-					android:layout_marginTop="670dp"
-					android:layout_width="350dp"
-					android:layout_height="60dp" />
 
-				<TextView android:id="@+id/sign_in_ek4"
-					android:layout_gravity="center_horizontal|center"
-					android:gravity="center"
-					android:textSize="25sp"
-					android:textColor="@color/rectangle_6_color"
-					android:layout_marginLeft="57dp"
-					android:layout_marginTop="660dp"
-					android:layout_width="277dp"
-					android:layout_height="76.5dp"
-					android:text="@string/sign_in_ek4_string"
-					 />
 
 
 				<RelativeLayout android:id="@+id/remember_sign_in"
