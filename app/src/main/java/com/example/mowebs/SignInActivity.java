@@ -25,7 +25,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.ImageView;
 
-public class sign_in_activity extends Activity {
+public class SignInActivity extends Activity {
 
 	
 	private View _bg__sign_in_ek2;
@@ -80,6 +80,7 @@ public class sign_in_activity extends Activity {
 	
 		
 		//custom code goes here
+
 	
 	}
 }
