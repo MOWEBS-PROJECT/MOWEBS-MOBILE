@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bfgradient"
+    tools:context=".MainActivity"
+    tools:ignore="MissingConstraints">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="10dp"
+            android:text="Register"
+            android:textSize="40dp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:id="@+id/tv_regis"/>
+
+        <ImageView
+            android:id="@+id/img_car"
+            android:layout_width="match_parent"
+            android:layout_height="162dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:foregroundGravity="center"
+            android:src="@drawable/car"
+            app:layout_constraintTop_toBottomOf="@+id/tv_regis" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/frame_input"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/user"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Enter your username"
+                android:textColor="#000000"
+                android:textColorHint="#707070"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/frame_input"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/sms"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Enter your email"
+                android:textColor="#000000"
+                android:textColorHint="#707070"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/frame_input"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/lock"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Enter your email"
+                android:textColor="#000000"
+                android:textColorHint="#707070"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:orientation="horizontal"
+            android:id="@+id/btn_signup">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sign_in_ek4"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:background="@drawable/frame_signup"
+                android:text="@string/sign_up_ek4"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="115dp"
+            android:layout_marginLeft="115dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="Already have an account?"
+                android:textColor="#7F7D7D"
+                android:textSize="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="SignIn"
+                android:textColor="#000000"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

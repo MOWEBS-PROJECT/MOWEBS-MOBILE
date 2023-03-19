@@ -55,7 +55,7 @@ public class SignInActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.sign_in);
+		setContentView(R.layout.activity_sign_in);
 
 		
 		_bg__sign_in_ek2 = (View) findViewById(R.id._bg__sign_in_ek2);

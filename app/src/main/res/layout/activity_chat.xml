@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity"
+    android:padding="15dp"
+    android:background="@drawable/default_background_gradient">
+
+
+   <androidx.appcompat.widget.AppCompatButton
+       android:id="@+id/btn_back"
+       android:layout_width="30dp"
+       android:layout_height="30dp"
+       android:drawableTop="@drawable/btn_back"
+       android:background="@null"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Customer Service"
+        android:textColor="@color/customer_service"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/listview_message_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back"
+        android:orientation="vertical"/>
+
+    
+    <LinearLayout
+        android:layout_width="365dp"
+        android:layout_height="159dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:elevation="5dp"
+        android:background="@drawable/white_background_rounded_shadow">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="120dp"
+            android:background="@drawable/edittext_chat"
+            android:layout_marginEnd="5dp">
+            <EditText
+                android:id="@+id/edittext_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_margin="10dp"
+                android:hint="Type a message"
+                android:textColorHint="#F1F1F1"
+                android:textSize="10dp"
+                android:fontFamily="@font/poppins_regular"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:background="@null"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:drawableTop="@drawable/send"
+                android:background="@null"
+                android:layout_marginBottom="15dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:drawableTop="@drawable/attach"
+                android:background="@null"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
