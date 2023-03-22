@@ -22,6 +22,7 @@ import android.os.Bundle;
 
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ImageView;
 
@@ -33,7 +34,7 @@ public class DashboardActivity extends Activity {
 	private ImageView battery;
 	private ImageView phone;
 	private TextView dashboard_ek4;
-	private TextView see_all;
+	private Button see_all;
 	private TextView recomended;
 	private ImageView line_5;
 	private ImageView line_6;
@@ -47,7 +48,7 @@ public class DashboardActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.dashboard);
+		setContentView(R.layout.activity_dashboard);
 
 		
 		_bg__dashboard_ek2 = (View) findViewById(R.id._bg__dashboard_ek2);
@@ -55,7 +56,7 @@ public class DashboardActivity extends Activity {
 		battery = (ImageView) findViewById(R.id.battery);
 		phone = (ImageView) findViewById(R.id.phone);
 		dashboard_ek4 = (TextView) findViewById(R.id.dashboard_ek4);
-		see_all = (TextView) findViewById(R.id.see_all);
+		see_all = findViewById(R.id.btn_seeall);
 		recomended = (TextView) findViewById(R.id.recomended);
 		line_5 = (ImageView) findViewById(R.id.line_5);
 		line_6 = (ImageView) findViewById(R.id.line_6);

@@ -111,7 +111,7 @@
             android:orientation="horizontal"
             android:id="@+id/btn_signup">
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/sign_in_ek4"
+                android:id="@+id/btn_signup"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:background="@drawable/frame_signup"

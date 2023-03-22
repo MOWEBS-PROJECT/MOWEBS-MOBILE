@@ -85,6 +85,7 @@ public class SignInActivity extends Activity {
 			@Override
 			public void onClick(View v)
 			{
+//				Pindah ke halaman dashboard
 				Intent intent = new Intent(SignInActivity.this, DashboardActivity.class);
 				startActivity(intent);
 			}
