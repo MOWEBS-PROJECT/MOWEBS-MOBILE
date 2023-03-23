@@ -9,6 +9,6 @@ public class CompletedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_completed);
+        setContentView(R.layout.activity_main);
     }
 }
