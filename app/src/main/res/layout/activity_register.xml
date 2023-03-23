@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bfgradient"
-    tools:context=".RegisterActivity"
+    tools:context="com.example.mowebs.RegisterActivity"
     tools:ignore="MissingConstraints">
 
     <LinearLayout
