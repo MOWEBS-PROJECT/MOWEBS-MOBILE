@@ -57,10 +57,21 @@ public class ChatActivity extends AppCompatActivity {
         });
 
         ArrayList<ChatObject> chat = new ArrayList<>();
-        chat.add(new ChatObject("Hello", "8.10", "CUSTOMER"));
-        chat.add(new ChatObject("Hello mr/mrs, good morning what can we do for you?", "8.13", "CS"));
-        chat.add(new ChatObject("Can i get some information about Rules for late returns?", "10.10", "CUSTOMER"));
-        chat.add(new ChatObject("Yes, for a delay of 12 hours will be fined $50, and for further delays will be charged $30 per 12 hours", "10.18", "CS"));
+
+        ChatObject customer = new ChatObject();
+        customer.setValue("Hello");
+        customer.setDate("14-04-2023");
+        customer.setId(1);
+        customer.setFrom("CUSTOMER");
+
+        ChatObject cs = new ChatObject();
+        customer.setValue("Hello mr/mrs, good morning what can we do for you?");
+        customer.setDate("14-04-2023");
+        customer.setId(1);
+        customer.setFrom("CS");
+
+        chat.add(customer);
+        chat.add(cs);
 
     }
 }
