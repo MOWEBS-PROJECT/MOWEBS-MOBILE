@@ -1,34 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.example.mowebs" >
+    package="com.example.mowebs">
 
-	<application
-		android:allowBackup="true"
-		android:theme="@style/AppTheme"
-		android:label="@string/app_name">
-		
-		<activity android:name="com.example.mowebs.RatingActivity" android:exported="false"/>
-		<activity android:name="com.example.mowebs.RegisterActivity" android:exported="false"/>
-		<activity android:name="com.example.mowebs.ProductDetailActivity" android:exported="false" />
-		<activity android:name="com.example.mowebs.ChatActivity" android:exported="false" />
-		<activity android:name="com.example.mowebs.DashboardActivity" android:exported="true" />
-		<activity android:name="com.example.mowebs.BookingActivity" android:exported="false"/>
-		<activity android:name="com.example.mowebs.CompletedActivity" android:exported="false"/>
-		<activity android:name="com.example.mowebs.ExploreActivity" android:exported="false"/>
-		<activity android:name="com.example.mowebs.OrderDetailActivity" android:exported="false"/>
-		<activity
-		android:name="com.example.mowebs.SignInActivity"
-		android:configChanges="orientation|keyboardHidden|screenSize"
-		android:exported="true"  >
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
-
-
-	</application>
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".RatingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".BookingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CompletedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExploreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OrderDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignInActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>
-	
-	

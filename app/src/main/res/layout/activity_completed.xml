@@ -23,7 +23,7 @@
             android:hint="Search"
             android:paddingLeft="14dp"
             android:paddingRight="15.4dp"
-            android:drawableEnd="@drawable/search"
+            android:drawableEnd="@drawable/search_navigation_icon"
             android:drawablePadding="50dp"
             android:layout_marginTop="52dp"
             android:layout_marginLeft="100dp"/>
