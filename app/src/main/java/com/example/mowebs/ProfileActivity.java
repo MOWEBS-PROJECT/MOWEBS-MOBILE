@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.ArrayList;
-
-public class ChatActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     Button navHome, navSearch, navMessage, navProfile;
 
@@ -17,7 +15,7 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_chat);
+        setContentView(R.layout.activity_profile);
 
         navHome = findViewById(R.id.navigation_home);
         navSearch = findViewById(R.id.navigation_search);
@@ -27,7 +25,7 @@ public class ChatActivity extends AppCompatActivity {
         navHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ChatActivity.this, Dashboard.class);
+                Intent intent = new Intent(ProfileActivity.this, Dashboard.class);
                 startActivity(intent);
             }
         });
@@ -35,7 +33,7 @@ public class ChatActivity extends AppCompatActivity {
         navSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ChatActivity.this, ExploreActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, ExploreActivity.class);
                 startActivity(intent);
             }
         });
@@ -43,7 +41,7 @@ public class ChatActivity extends AppCompatActivity {
         navMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ChatActivity.this, ChatActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, ChatActivity.class);
                 startActivity(intent);
             }
         });
@@ -51,16 +49,12 @@ public class ChatActivity extends AppCompatActivity {
         navProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ChatActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
 
-        ArrayList<ChatObject> chat = new ArrayList<>();
-        chat.add(new ChatObject("Hello", "8.10", "CUSTOMER"));
-        chat.add(new ChatObject("Hello mr/mrs, good morning what can we do for you?", "8.13", "CS"));
-        chat.add(new ChatObject("Can i get some information about Rules for late returns?", "10.10", "CUSTOMER"));
-        chat.add(new ChatObject("Yes, for a delay of 12 hours will be fined $50, and for further delays will be charged $30 per 12 hours", "10.18", "CS"));
+
 
     }
 }

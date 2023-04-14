@@ -69,7 +69,6 @@ public class SignInActivity extends Activity {
 		rectangle_8 = (View) findViewById(R.id.rectangle_8);
 		logo_ek1 = (TextView) findViewById(R.id.logo_ek1);
 		welcome_ = (TextView) findViewById(R.id.welcome_);
-		_20_01 = (TextView) findViewById(R.id._20_01);
 		don_t_have_an_account__sign_up = (TextView) findViewById(R.id.don_t_have_an_account__sign_up);
 		sign_in_ek4 = (TextView) findViewById(R.id.sign_in_ek4); //SignIn Button
 		forgot_password__ = (TextView) findViewById(R.id.forgot_password__);
@@ -84,7 +83,7 @@ public class SignInActivity extends Activity {
 			public void onClick(View v)
 			{
 //				Pindah ke halaman dashboard
-				Intent intent = new Intent(SignInActivity.this, DashboardActivity.class);
+				Intent intent = new Intent(SignInActivity.this, Dashboard.class);
 				startActivity(intent);
 			}
 		});

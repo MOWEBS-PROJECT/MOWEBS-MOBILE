@@ -189,45 +189,6 @@
 					android:text="@string/welcome__string"
 					 />
 
-
-				<RelativeLayout android:id="@+id/phone_detail"
-					android:layout_marginTop="9dp"
-					android:layout_marginStart="21dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginLeft="35dp"
-					>
-
-					<TextView android:id="@+id/_20_01"
-						android:textStyle="bold"
-						android:textSize="12sp"
-						android:textColor="@color/_bg__sign_in_ek2_color"
-						android:layout_marginLeft="0dp"
-						android:layout_marginTop="8dp"
-						android:layout_width="48dp"
-						android:layout_height="26dp"
-						android:text="@string/_20_01_string"
-						 />
-
-					<ImageView android:id="@+id/battery"
-						android:src="@drawable/battery"
-						android:contentDescription="battery"
-						 android:layout_marginStart="314dp"
-						android:layout_marginTop="0dp"
-						android:layout_width="23dp"
-						android:layout_height="23dp" />
-
-					<ImageView android:id="@+id/phone"
-						android:src="@drawable/phone"
-						android:contentDescription="phone"
-						 android:layout_marginStart="278dp"
-						android:layout_marginTop="0dp"
-						android:layout_width="23dp"
-						android:layout_height="23dp" />
-
-				</RelativeLayout>
-
-
 				<RelativeLayout
 					android:id="@+id/sign_in_"
 					android:layout_width="match_parent"

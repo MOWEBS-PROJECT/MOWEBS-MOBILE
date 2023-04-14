@@ -52,7 +52,6 @@ public class DashboardActivity extends Activity {
 
 		
 		_bg__dashboard_ek2 = (View) findViewById(R.id._bg__dashboard_ek2);
-		_20_01 = (TextView) findViewById(R.id._20_01);
 		dashboard_ek4 = (TextView) findViewById(R.id.dashboard_ek4);
 		see_all = findViewById(R.id.btn_seeall);
 		recomended = (TextView) findViewById(R.id.recomended);
