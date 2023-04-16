@@ -78,7 +78,7 @@ public class ChatActivity extends AppCompatActivity {
         });
 
 
-        ArrayList<ChatObject> chat = new ArrayList<>();
+        ArrayList<ChatObject> chat = dataSource.getAllChat();
 
         ChatObject customer = new ChatObject();
         customer.setValue("Hello");
@@ -94,7 +94,7 @@ public class ChatActivity extends AppCompatActivity {
         cs.setFrom("CS");
         cs.setIsUpdated(1);
 
-        chat.add(customer);
+        //chat.add(customer);
         //chat.add(cs);
 
         adapterChat = new ChatViewAdapter(chat, getApplicationContext(), inputMessage, btnSend, editMessageContainer, recyclerViewMessage);
