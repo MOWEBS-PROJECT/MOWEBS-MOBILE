@@ -51,27 +51,16 @@ public class DBDataSource {
             chat.setIsUpdated(cursor.getInt(4));
             return chat;
         }
-    public ArrayList<ChatObject> getAllChat() {
-        ArrayList<ChatObject> daftarChat = new ArrayList<ChatObject>();
-        Cursor cursor = database.query(dbHelper.TABLE_NAME, allColumns, null, null, null, null, null);
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            ChatObject cht = cursorToChat(cursor);
-            daftarChat.add(cht);
-            cursor.moveToNext();
+        public ArrayList<ChatObject> getAllChat() {
+            ArrayList<ChatObject> daftarChat = new ArrayList<ChatObject>();
+            Cursor cursor = database.query(dbHelper.TABLE_NAME, allColumns, null, null, null, null, null);
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                ChatObject cht = cursorToChat(cursor);
+                daftarChat.add(cht);
+                cursor.moveToNext();
+            }
+            cursor.close();
+            return daftarChat;
         }
-        cursor.close();
-        return daftarChat;
-    }
-
-    public ChatObject getChat(long id) {
-
-        Cursor cursor = database.query(dbHelper.TABLE_NAME, allColumns,
-                dbHelper.COLUMN_ID + "=" + id,
-                null, null, null, null);
-        cursor.moveToFirst();
-        ChatObject chat = cursorToChat(cursor);
-        cursor.close();
-        return chat;
-    }
 }
