@@ -24,12 +24,15 @@ public class ChatActivity extends AppCompatActivity {
     RecyclerView recyclerViewMessage;
     ChatViewAdapter adapterChat;
     LinearLayout editMessageContainer;
-
+    DBDataSource dataSource;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_chat);
+
+        dataSource = new DBDataSource(this);
+        dataSource.open();
 
         navHome = findViewById(R.id.navigation_home);
         navSearch = findViewById(R.id.navigation_search);
@@ -82,17 +85,17 @@ public class ChatActivity extends AppCompatActivity {
         customer.setDate("14-04-2023");
         customer.setId(1);
         customer.setFrom("CUSTOMER");
-        customer.setIsUpdated(true);
+        customer.setIsUpdated(1);
 
         ChatObject cs = new ChatObject();
         cs.setValue("Hello mr/mrs, good morning what can we do for you?");
         cs.setDate("14-04-2023");
         cs.setId(1);
         cs.setFrom("CS");
-        cs.setIsUpdated(true);
+        cs.setIsUpdated(1);
 
         chat.add(customer);
-        chat.add(cs);
+        //chat.add(cs);
 
         adapterChat = new ChatViewAdapter(chat, getApplicationContext(), inputMessage, btnSend, editMessageContainer, recyclerViewMessage);
         recyclerViewMessage.setAdapter(adapterChat);
@@ -104,16 +107,18 @@ public class ChatActivity extends AppCompatActivity {
                 String value = inputMessage.getText().toString();
                 Date date = new Date();
 
+                dataSource.createChat(value, "CUSTOMER","" + date.getHours() + "." + date.getMinutes(), 0);
+
                 inputMessage.setText("");
 
                 ChatObject newMessage = new ChatObject();
                 newMessage.setValue(value);
                 newMessage.setDate("" + date.getHours() + "." + date.getMinutes());
-                newMessage.setId(10);
                 newMessage.setFrom("CUSTOMER");
                 chat.add(newMessage);
 
                 adapterChat.notifyDataSetChanged();
+                Toast.makeText(ChatActivity.this, "pesan telah dikirim", Toast.LENGTH_SHORT).show();
             }
         });
 

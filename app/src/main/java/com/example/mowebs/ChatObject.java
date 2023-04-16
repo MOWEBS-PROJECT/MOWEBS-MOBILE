@@ -59,8 +59,8 @@ public class ChatObject {
         this.id = id;
     }
 
-    public void setIsUpdated(boolean isUpdate) {
-        this.isUpdated = isUpdate;
+    public void setIsUpdated(int isUpdate) {
+        this.isUpdated = (isUpdate == 1)? true : false;
     }
 
     public void setValue(String value) {
