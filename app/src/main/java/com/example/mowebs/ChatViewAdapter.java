@@ -85,7 +85,7 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
                 String messageValue = inputMessage.getText().toString();
                 inputMessage.setText("");
                 chatList.get(holder.getAdapterPosition()).setValue(messageValue);
-                chatList.get(holder.getAdapterPosition()).setIsUpdated(true);
+                chatList.get(holder.getAdapterPosition()).setIsUpdated(1);
                 notifyDataSetChanged();
             }
         });

@@ -14,6 +14,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_VALUE = "value";
     public static final String COLUMN_FROM = "_from";
     public static final String COLUMN_DATE = "date";
+    public static final String COLUMN_ISUPDATED = "isupdated";
 
     private static final String db_name = "chat.db";
     private static final int db_version = 1;
@@ -24,7 +25,8 @@ public class DBHelper extends SQLiteOpenHelper {
             COLUMN_ID   + " integer primary key autoincrement, "+
             COLUMN_VALUE + " varchar(100) not null, "+
             COLUMN_FROM + " varchar(50) not null, "+
-            COLUMN_DATE + " varchar(50) not null);";
+            COLUMN_DATE + " varchar(50) not null,"+
+            COLUMN_ISUPDATED + " numeric not null);";
     public DBHelper(@Nullable Context context) {
         super(context, db_name, null, db_version);
     }
