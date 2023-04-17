@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,6 +49,7 @@ public class ChatActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ChatActivity.this, Dashboard.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -58,14 +58,7 @@ public class ChatActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ChatActivity.this, ExploreActivity.class);
                 startActivity(intent);
-            }
-        });
-
-        navMessage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ChatActivity.this, ChatActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 
@@ -74,30 +67,12 @@ public class ChatActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ChatActivity.this, ProfileActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
-
         ArrayList<ChatObject> chat = dataSource.getAllChat();
-
-        ChatObject customer = new ChatObject();
-        customer.setValue("Hello");
-        customer.setDate("14-04-2023");
-        customer.setId(1);
-        customer.setFrom("CUSTOMER");
-        customer.setIsUpdated(1);
-
-        ChatObject cs = new ChatObject();
-        cs.setValue("Hello mr/mrs, good morning what can we do for you?");
-        cs.setDate("14-04-2023");
-        cs.setId(1);
-        cs.setFrom("CS");
-        cs.setIsUpdated(1);
-
-        //chat.add(customer);
-        //chat.add(cs);
-
-        adapterChat = new ChatViewAdapter(chat, getApplicationContext(), inputMessage, btnSend, editMessageContainer, recyclerViewMessage);
+        adapterChat = new ChatViewAdapter(chat, this, inputMessage, btnSend, editMessageContainer, recyclerViewMessage);
         recyclerViewMessage.setAdapter(adapterChat);
         recyclerViewMessage.setLayoutManager( new LinearLayoutManager(ChatActivity.this));
 
@@ -107,18 +82,16 @@ public class ChatActivity extends AppCompatActivity {
                 String value = inputMessage.getText().toString();
                 Date date = new Date();
 
-                dataSource.createChat(value, "CUSTOMER","" + date.getHours() + "." + date.getMinutes(), 0);
-
                 inputMessage.setText("");
 
                 ChatObject newMessage = new ChatObject();
                 newMessage.setValue(value);
                 newMessage.setDate("" + date.getHours() + "." + date.getMinutes());
-                newMessage.setFrom("CUSTOMER");
+                newMessage.set_from("CUSTOMER");
                 chat.add(newMessage);
-
                 adapterChat.notifyDataSetChanged();
-                Toast.makeText(ChatActivity.this, "pesan telah dikirim", Toast.LENGTH_SHORT).show();
+
+                dataSource.createChat(value, "CUSTOMER","" + date.getHours() + "." + date.getMinutes(), 0);
             }
         });
 
@@ -137,31 +110,15 @@ public class ChatActivity extends AppCompatActivity {
                         ChatObject newMessage = new ChatObject();
                         newMessage.setValue(value);
                         newMessage.setDate("" + date.getHours() + "." + date.getMinutes());
-                        newMessage.setId(10);
-                        newMessage.setFrom("CUSTOMER");
+                        newMessage.set_from("CUSTOMER");
                         chat.add(newMessage);
-
                         adapterChat.notifyDataSetChanged();
+
+                        dataSource.createChat(value, "CUSTOMER","" + date.getHours() + "." + date.getMinutes(), 0);
                     }
                 });
             }
         });
     }
 
-    public void showOpitonMessage() {
-        Dialog optionMessage = new Dialog(this);
-        optionMessage.setContentView(R.layout.dialog_option_message);
-        Button btnUpdate = (Button) optionMessage.findViewById(R.id.btn_update);
-        Button btnDelete = (Button) optionMessage.findViewById(R.id.btn_delete);
-
-        Toast.makeText(this, "Udah kebuka", Toast.LENGTH_SHORT).show();
-        btnUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                updateMessage( holder );
-                optionMessage.dismiss();
-            }
-        });
-        optionMessage.show();
-    }
 }

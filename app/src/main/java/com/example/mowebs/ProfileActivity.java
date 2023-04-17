@@ -27,6 +27,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileActivity.this, Dashboard.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -35,6 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileActivity.this, ExploreActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -43,14 +45,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileActivity.this, ChatActivity.class);
                 startActivity(intent);
-            }
-        });
-
-        navProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 

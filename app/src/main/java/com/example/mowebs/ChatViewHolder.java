@@ -31,7 +31,7 @@ public class ChatViewHolder extends RecyclerView.ViewHolder {
     public void bind(ChatObject chatObject) {
         boolean  update = chatObject.getIsUpdated();
 
-        if (chatObject.getFrom() == "CUSTOMER") {
+        if (chatObject.get_from() == "CUSTOMER") {
             linearLayoutMessage.setGravity(Gravity.END);
             linearLayoutValue.setBackgroundResource(R.drawable.background_chat_coming_out);
             linearLayoutContainer.setGravity(Gravity.END);

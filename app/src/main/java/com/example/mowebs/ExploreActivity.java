@@ -27,14 +27,7 @@ public class ExploreActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ExploreActivity.this, Dashboard.class);
                 startActivity(intent);
-            }
-        });
-
-        navSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ExploreActivity.this, ExploreActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 
@@ -43,6 +36,7 @@ public class ExploreActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ExploreActivity.this, ChatActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -51,6 +45,7 @@ public class ExploreActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ExploreActivity.this, ProfileActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

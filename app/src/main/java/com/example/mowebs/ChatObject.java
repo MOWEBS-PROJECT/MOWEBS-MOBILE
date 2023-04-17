@@ -2,12 +2,12 @@ package com.example.mowebs;
 
 public class ChatObject {
 
-    private final static String CUSTOMER = "CUSTOMER";
-    private final static String CS = "CS";
-    private String value, from, date;
-    private boolean isUpdated = false;
+    public final static String CUSTOMER = "CUSTOMER";
+    public final static String CS = "CS";
+    private String value, _from, date;
+    private boolean isupdated = false;
     private boolean isUpdating = false;
-    private long id;
+    private long _id;
 //                CUSTOMER // CS
     public ChatObject() {
     }
@@ -20,16 +20,16 @@ public class ChatObject {
         return value;
     }
 
-    public String getFrom() {
-        return from;
+    public String get_from() {
+        return _from;
     }
 
     public boolean getIsUpdated() {
-        return isUpdated;
+        return isupdated;
     }
 
-    public long getId() {
-        return id;
+    public long get_id() {
+        return _id;
     }
 
     public void setIsUpdating(boolean updating) {
@@ -44,23 +44,23 @@ public class ChatObject {
         this.date = date;
     }
 
-    public void setFrom(String from) {
-        switch (from) {
+    public void set_from(String _from) {
+        switch (_from) {
             case CUSTOMER:
-                this.from = CUSTOMER;
+                this._from = CUSTOMER;
                 break;
             case CS:
-                this.from = CS;
+                this._from = CS;
                 break;
         }
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void set_id(long _id) {
+        this._id = _id;
     }
 
     public void setIsUpdated(int isUpdate) {
-        this.isUpdated = (isUpdate == 1)? true : false;
+        this.isupdated = (isUpdate == 1)? true : false;
     }
 
     public void setValue(String value) {

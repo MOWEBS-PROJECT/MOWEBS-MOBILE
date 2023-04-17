@@ -44,9 +44,10 @@ public class DBDataSource {
         }
         private ChatObject cursorToChat(Cursor cursor) {
             ChatObject chat = new ChatObject();
-            chat.setId(cursor.getLong(0));
+
+            chat.set_id(cursor.getLong(0));
             chat.setValue(cursor.getString(1));
-            chat.setFrom(cursor.getString(2));
+            chat.set_from(cursor.getString(2));
             chat.setDate(cursor.getString(3));
             chat.setIsUpdated(cursor.getInt(4));
             return chat;
@@ -64,17 +65,19 @@ public class DBDataSource {
             return daftarChat;
         }
         public void deleteChat(long id){
-            String s = " _id="+id;
+            String s = " _id=" + id;
             database.delete(DBHelper.TABLE_NAME,s,null);
         }
-        public void updateChat(ChatObject b){
-            String s = "_id = "+b.getId();
-            int isupdated = (b.getIsUpdated() == true)?1:0;
+        public void updateChat(ChatObject chatObject){
+            String s = "_id = " + chatObject.get_id();
+            int isupdated = (chatObject.getIsUpdated() == true)? 1 : 0;
+
             ContentValues v = new ContentValues();
-            v.put(DBHelper.COLUMN_VALUE,b.getValue());
-            v.put(DBHelper.COLUMN_FROM,b.getFrom());
-            v.put(DBHelper.COLUMN_DATE,b.getDate());
-            v.put(DBHelper.COLUMN_ISUPDATED,isupdated);
-            database.update(DBHelper.TABLE_NAME,v,s,null);
+            v.put(DBHelper.COLUMN_VALUE, chatObject.getValue());
+            v.put(DBHelper.COLUMN_FROM, chatObject.get_from());
+            v.put(DBHelper.COLUMN_DATE, chatObject.getDate());
+            v.put(DBHelper.COLUMN_ISUPDATED, isupdated);
+
+            database.update(DBHelper.TABLE_NAME, v, s, null);
     }
 }
