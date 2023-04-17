@@ -63,4 +63,18 @@ public class DBDataSource {
             cursor.close();
             return daftarChat;
         }
+        public void deleteChat(long id){
+            String s = " _id="+id;
+            database.delete(DBHelper.TABLE_NAME,s,null);
+        }
+        public void updateChat(ChatObject b){
+            String s = "_id = "+b.getId();
+            int isupdated = (b.getIsUpdated() == true)?1:0;
+            ContentValues v = new ContentValues();
+            v.put(DBHelper.COLUMN_VALUE,b.getValue());
+            v.put(DBHelper.COLUMN_FROM,b.getFrom());
+            v.put(DBHelper.COLUMN_DATE,b.getDate());
+            v.put(DBHelper.COLUMN_ISUPDATED,isupdated);
+            database.update(DBHelper.TABLE_NAME,v,s,null);
+    }
 }

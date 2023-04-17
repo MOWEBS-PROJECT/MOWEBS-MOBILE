@@ -26,6 +26,7 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
     LinearLayout editMessageContainer;
     RecyclerView recyclerViewMessage;
 
+    DBDataSource dataSource;
     public ChatViewAdapter(List<ChatObject> chatList, Context context,
                            EditText inputMessage, Button btnSend,
                            LinearLayout editMessageContainer, RecyclerView recyclerViewMessage) {
@@ -62,8 +63,8 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
             holder.linearLayoutMessage.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-
-                    return false;
+                    updateMessage(holder);
+                    return true;
                 }
             });
         }
@@ -77,7 +78,6 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
     public void updateMessage(ChatViewHolder holder) {
         inputMessage.setText(chatList.get(holder.getAdapterPosition()).getValue());
         editMessageContainer.setVisibility(View.VISIBLE);
-
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,6 +87,12 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
                 chatList.get(holder.getAdapterPosition()).setValue(messageValue);
                 chatList.get(holder.getAdapterPosition()).setIsUpdated(1);
                 notifyDataSetChanged();
+                try{
+                    dataSource.updateChat(chatList.get(holder.getAdapterPosition()));
+                }
+                catch (Exception e){
+                    System.out.println(e.toString());
+                }
             }
         });
     }
