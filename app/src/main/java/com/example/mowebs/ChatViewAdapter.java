@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
@@ -48,26 +47,25 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
+        ChatObject chatObject = chatList.get(position);
 
         try {
-            holder.tvValue.setText(chatList.get(position).getValue());
-            holder.tvTime.setText(chatList.get(position).getDate());
+            holder.tvValue.setText(chatObject.getValue());
+            holder.tvTime.setText(chatObject.getDate());
         } catch (Exception e) {
             Toast.makeText(context, "Error bind message", Toast.LENGTH_SHORT).show();
         }
-
-        ChatObject chatObject = chatList.get(position);
         holder.bind(chatObject);
 
-        if (chatObject.getFrom() == "CUSTOMER") {
-            holder.linearLayoutMessage.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    updateMessage(holder);
-                    return true;
-                }
-            });
-        }
+        if (chatObject.get_from() != ChatObject.CUSTOMER) return ;
+
+        holder.linearLayoutMessage.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                showOptionMessage(position);
+                return true;
+            }
+        });
     }
 
     @Override
@@ -75,27 +73,63 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
         return this.chatList.size();
     }
 
-    public void updateMessage(ChatViewHolder holder) {
-        inputMessage.setText(chatList.get(holder.getAdapterPosition()).getValue());
+    public void showOptionMessage(int position) {
+        Dialog optionMessage = new Dialog(context);
+        optionMessage.setContentView(R.layout.dialog_option_message);
+
+        Button btnUpdate = (Button) optionMessage.findViewById(R.id.btn_update);
+        Button btnDelete = (Button) optionMessage.findViewById(R.id.btn_delete);
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateMessage( position );
+                optionMessage.dismiss();
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteMessage(position);
+                optionMessage.dismiss();
+            }
+        });
+        optionMessage.show();
+    }
+
+    public void updateMessage(int position) {
+        inputMessage.setText(chatList.get(position).getValue());
         editMessageContainer.setVisibility(View.VISIBLE);
+        dataSource = new DBDataSource(context);
+        dataSource.open();
+
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ChatObject chatObject = chatList.get(position);
                 String messageValue = inputMessage.getText().toString();
                 inputMessage.setText("");
-                chatList.get(holder.getAdapterPosition()).setValue(messageValue);
-                chatList.get(holder.getAdapterPosition()).setIsUpdated(1);
+                chatObject.setValue(messageValue);
+                chatObject.setIsUpdated(1);
+
+                dataSource.updateChat(chatObject);
                 notifyDataSetChanged();
-                try{
-                    dataSource.updateChat(chatList.get(holder.getAdapterPosition()));
-                }
-                catch (Exception e){
-                    System.out.println(e.toString());
-                }
             }
         });
     }
+
+    public void deleteMessage(int position) {
+        ChatObject chatObject = chatList.get(position);
+
+        dataSource = new DBDataSource(context);
+        dataSource.open();
+        dataSource.deleteChat(chatObject.get_id());
+
+        chatList.remove(position);
+        notifyDataSetChanged();
+    }
+
 
 
 }
