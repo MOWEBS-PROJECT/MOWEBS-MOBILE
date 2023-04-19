@@ -18,14 +18,25 @@ import java.util.List;
 
 public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
+    // Deklarasi variabel
     List<ChatObject> chatList = new ArrayList<>();
     EditText inputMessage;
     Context context;
     Button btnSend;
     LinearLayout editMessageContainer;
     RecyclerView recyclerViewMessage;
-
     DBDataSource dataSource;
+
+    /**
+     * {@summary} Deklarasi Contructor 
+     * @param chatList
+     * @param context
+     * @param inputMessage
+     * @param btnSend
+     * @param editMessageContainer
+     * @param recyclerViewMessage
+     */
+    
     public ChatViewAdapter(List<ChatObject> chatList, Context context,
                            EditText inputMessage, Button btnSend,
                            LinearLayout editMessageContainer, RecyclerView recyclerViewMessage) {
@@ -40,6 +51,7 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
     @NonNull
     @Override
     public ChatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Mengisi ViewHolder dengan layout Chat
         View view = LayoutInflater.from(context)
         .inflate(R.layout.chat_comingin, parent, false);
         return new ChatViewHolder(view);
@@ -47,18 +59,17 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
+        // Menangani data yang akan masuk kedalam RecyclerView
         ChatObject chatObject = chatList.get(position);
 
-        try {
-            holder.tvValue.setText(chatObject.getValue());
-            holder.tvTime.setText(chatObject.getDate());
-        } catch (Exception e) {
-            Toast.makeText(context, "Error bind message", Toast.LENGTH_SHORT).show();
-        }
+        // Set semua data kedalam ViewHolder 
+        holder.tvValue.setText(chatObject.getValue());
+        holder.tvTime.setText(chatObject.getDate());
         holder.bind(chatObject);
 
         if (chatObject.get_from() != ChatObject.CUSTOMER) return ;
 
+        // Set onlongclicklistener pada sebuah item yang berinteraksi
         holder.linearLayoutMessage.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -68,11 +79,13 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
         });
     }
 
+    // Mengembalikan ukuran dari chatList
     @Override
     public int getItemCount() {
         return this.chatList.size();
     }
 
+    // menampilkan dialog tombol update dan delete
     public void showOptionMessage(int position) {
         Dialog optionMessage = new Dialog(context);
         optionMessage.setContentView(R.layout.dialog_option_message);
@@ -80,6 +93,7 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
         Button btnUpdate = (Button) optionMessage.findViewById(R.id.btn_update);
         Button btnDelete = (Button) optionMessage.findViewById(R.id.btn_delete);
 
+        // Set onclicklistener pada tombol update
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +102,7 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
             }
         });
 
+        // Set onclicklistener pada tombol delete
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,34 +113,43 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
         optionMessage.show();
     }
 
+    // update chat yang diedit
     public void updateMessage(int position) {
-        inputMessage.setText(chatList.get(position).getValue());
-        editMessageContainer.setVisibility(View.VISIBLE);
         dataSource = new DBDataSource(context);
         dataSource.open();
 
+        inputMessage.setText(chatList.get(position).getValue());
+        editMessageContainer.setVisibility(View.VISIBLE);
+       
+        // Set onclicklistener pada tombol send message
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ChatObject chatObject = chatList.get(position);
                 String messageValue = inputMessage.getText().toString();
+
+                // melakukan update ke database
+                dataSource.updateChat(chatObject);
+
+                // Melakukan update pada tampilan user 
                 inputMessage.setText("");
                 chatObject.setValue(messageValue);
                 chatObject.setIsUpdated(1);
-
-                dataSource.updateChat(chatObject);
                 notifyDataSetChanged();
             }
         });
     }
 
+    // 
     public void deleteMessage(int position) {
         ChatObject chatObject = chatList.get(position);
 
+        // Melakukan delete item pada database
         dataSource = new DBDataSource(context);
         dataSource.open();
         dataSource.deleteChat(chatObject.get_id());
 
+        // Melakukan update pada tampilan user
         chatList.remove(position);
         notifyDataSetChanged();
     }
