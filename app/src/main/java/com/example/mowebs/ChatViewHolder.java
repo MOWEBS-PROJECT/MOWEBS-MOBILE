@@ -11,10 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ChatViewHolder extends RecyclerView.ViewHolder {
 
+    // Deklarasi variabel
     TextView tvTime, tvValue, tvEditedSign;
     View view;
     LinearLayout linearLayoutMessage, linearLayoutValue, linearLayoutContainer;
 
+    /**
+     * {@summary} Deklarasi Constructor 
+     * @param view
+     */
     public ChatViewHolder(View view) {
         super(view);
 
@@ -28,16 +33,19 @@ public class ChatViewHolder extends RecyclerView.ViewHolder {
         this.view = view;
     }
 
+    // melakukan penambahan setting pada holder
     public void bind(ChatObject chatObject) {
         boolean  update = chatObject.getIsUpdated();
 
-        if (chatObject.get_from() == "CUSTOMER") {
+        // merubah layout jika chat berasal dari CUSTOMER
+        if (chatObject.get_from() == ChatObject.CUSTOMER) {
             linearLayoutMessage.setGravity(Gravity.END);
             linearLayoutValue.setBackgroundResource(R.drawable.background_chat_coming_out);
             linearLayoutContainer.setGravity(Gravity.END);
             tvValue.setTextColor(ColorStateList.valueOf(Color.rgb(255,255,255)));
         }
 
+        // menampilkan Tulisan Edited pada tampilan jika chat pernah diedit
         if (update) {
             tvEditedSign.setVisibility(view.VISIBLE);
 
