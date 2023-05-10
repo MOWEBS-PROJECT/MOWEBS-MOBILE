@@ -19,6 +19,7 @@
         android:layout_marginTop="5dp">
 
         <ImageView
+            android:id="@+id/imageMobil"
             android:layout_width="400dp"
             android:layout_height="300dp"
             android:scaleType="centerCrop"
@@ -34,6 +35,7 @@
             android:drawableTop="@drawable/btn_back"/>
 
         <TextView
+            android:id="@+id/jenisMobil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
@@ -136,8 +138,8 @@
                 android:background="@drawable/specification_background">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:src="@drawable/transmission_icon"
                     android:layout_marginBottom="5dp"/>
 
@@ -149,9 +151,9 @@
                     android:textColor="#A0A0A0"
                     android:textSize="9dp"/>
                 <TextView
+                    android:id="@+id/tvTransmission"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Automatic"
                     android:fontFamily="@font/poppins_semi_bold"
                     android:textColor="#5E5E5E"
                     android:textSize="11dp"/>
@@ -166,22 +168,22 @@
                 android:background="@drawable/specification_background">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/transmission_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/acceleration_icon"
                     android:layout_marginBottom="5dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Transmission"
+                    android:text="Acceleration"
                     android:fontFamily="@font/poppins_regular"
                     android:textColor="#A0A0A0"
                     android:textSize="9dp"/>
                 <TextView
+                    android:id="@+id/tvAcceleration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Automatic"
                     android:fontFamily="@font/poppins_semi_bold"
                     android:textColor="#5E5E5E"
                     android:textSize="11dp"/>
@@ -196,22 +198,22 @@
                 android:background="@drawable/specification_background">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/transmission_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/seat_icon"
                     android:layout_marginBottom="5dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Transmission"
+                    android:text="Seat"
                     android:fontFamily="@font/poppins_regular"
                     android:textColor="#A0A0A0"
                     android:textSize="9dp"/>
                 <TextView
+                    android:id="@+id/tvSeat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Automatic"
                     android:fontFamily="@font/poppins_semi_bold"
                     android:textColor="#5E5E5E"
                     android:textSize="11dp"/>
@@ -226,22 +228,22 @@
                 android:background="@drawable/specification_background">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/transmission_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/colour_icon"
                     android:layout_marginBottom="5dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Transmission"
+                    android:text="Colour"
                     android:fontFamily="@font/poppins_regular"
                     android:textColor="#A0A0A0"
                     android:textSize="9dp"/>
                 <TextView
+                    android:id="@+id/tvColour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Automatic"
                     android:fontFamily="@font/poppins_semi_bold"
                     android:textColor="#5E5E5E"
                     android:textSize="11dp"/>
@@ -256,22 +258,22 @@
                 android:background="@drawable/specification_background">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/transmission_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/fuel_icon"
                     android:layout_marginBottom="5dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Transmission"
+                    android:text="Fuel"
                     android:fontFamily="@font/poppins_regular"
                     android:textColor="#A0A0A0"
                     android:textSize="9dp"/>
                 <TextView
+                    android:id="@+id/tvFuel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Automatic"
                     android:fontFamily="@font/poppins_semi_bold"
                     android:textColor="#5E5E5E"
                     android:textSize="11dp"/>
