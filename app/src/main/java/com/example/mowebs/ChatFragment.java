@@ -1,88 +1,106 @@
 package com.example.mowebs;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Dialog;
-import android.content.Intent;
-import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-public class ChatActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link ChatFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class ChatFragment extends Fragment {
 
-    // Deklarasi Variabel
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
     Button navHome, navSearch, navMessage, navProfile, btnSend, btnCancelUpdate;
     EditText inputMessage;
     RecyclerView recyclerViewMessage;
     ChatViewAdapter adapterChat;
     LinearLayout editMessageContainer;
     DBDataSource dataSource;
+    Context contextParent;
 
+    public ChatFragment() {
+        // Required empty public constructor
+    }
+
+    public ChatFragment(Context contextParent) {
+        this.contextParent = contextParent;
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment ChatFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static ChatFragment newInstance(String param1, String param2) {
+        ChatFragment fragment = new ChatFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
-        setContentView(R.layout.activity_chat);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
 
-        dataSource = new DBDataSource(this);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_chat, container, false);
+
+        dataSource = new DBDataSource(contextParent);
         dataSource.open();
 
-        // Inisialisasi variabel berdasarkan layout
-        navHome = findViewById(R.id.navigation_home);
-        navSearch = findViewById(R.id.navigation_search);
-        navMessage = findViewById(R.id.nagivation_message);
-        navProfile = findViewById(R.id.nagivation_profile);
-
-        btnSend = findViewById(R.id.btn_send);
-        btnCancelUpdate = findViewById(R.id.btnCancelUpdate);
-        inputMessage = findViewById(R.id.edittext_chat);
-        editMessageContainer = findViewById(R.id.editMessage_container);
-        recyclerViewMessage = findViewById(R.id.recycleViewMessage);
-
-        navHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ChatActivity.this, Dashboard.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        navSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ChatActivity.this, ExploreActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        navProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ChatActivity.this, ProfileActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        btnSend = view.findViewById(R.id.btn_send);
+        btnCancelUpdate = view.findViewById(R.id.btnCancelUpdate);
+        inputMessage = view.findViewById(R.id.edittext_chat);
+        editMessageContainer = view.findViewById(R.id.editMessage_container);
+        recyclerViewMessage = view.findViewById(R.id.recycleViewMessage);
 
         // Deklarasi dan inisialisasi variabel yang bertype ArrayList dengan value berbentuk ChatObject
         // Datanya diambil dari database dengan method
         ArrayList<ChatObject> chat = dataSource.getAllChat();
         // Inisialisasi adapter
-        adapterChat = new ChatViewAdapter(chat, this, inputMessage, btnSend, editMessageContainer, recyclerViewMessage);
-        // Set adapter dari RecyclerView menggunakan adapter 
+        adapterChat = new ChatViewAdapter(chat, contextParent, inputMessage, btnSend, editMessageContainer, recyclerViewMessage);
+        // Set adapter dari RecyclerView menggunakan adapter
         recyclerViewMessage.setAdapter(adapterChat);
-        recyclerViewMessage.setLayoutManager( new LinearLayoutManager(ChatActivity.this));
+        recyclerViewMessage.setLayoutManager( new LinearLayoutManager(contextParent));
 
         // Inisialisaso Onclicklistener dari tombol send
         btnSend.setOnClickListener(new View.OnClickListener() {
@@ -98,8 +116,8 @@ public class ChatActivity extends AppCompatActivity {
                 newMessage.setValue(value);
                 newMessage.setDate("" + date.getHours() + "." + date.getMinutes());
                 newMessage.set_from("CUSTOMER");
-                
-                // tambah ke array chat 
+
+                // tambah ke array chat
                 chat.add(newMessage);
                 // Memberitahukan adapter bahwa data ada yang dirubah
                 adapterChat.notifyDataSetChanged();
@@ -128,7 +146,7 @@ public class ChatActivity extends AppCompatActivity {
                         newMessage.setValue(value);
                         newMessage.setDate("" + date.getHours() + "." + date.getMinutes());
                         newMessage.set_from("CUSTOMER");
-                        // tambah ke array chat 
+                        // tambah ke array chat
                         chat.add(newMessage);
                         // Memberitahukan adapter bahwa data ada yang dirubah
                         adapterChat.notifyDataSetChanged();
@@ -139,6 +157,7 @@ public class ChatActivity extends AppCompatActivity {
                 });
             }
         });
-    }
 
+        return view;
+    }
 }

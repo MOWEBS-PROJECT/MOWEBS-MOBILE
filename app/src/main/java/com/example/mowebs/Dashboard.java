@@ -17,36 +17,5 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_dashboard2);
 
-        navHome = findViewById(R.id.navigation_home);
-        navSearch = findViewById(R.id.navigation_search);
-        navMessage = findViewById(R.id.nagivation_message);
-        navProfile = findViewById(R.id.nagivation_profile);
-
-        navSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, ExploreActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        navMessage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, ChatActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        navProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, ProfileActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
     }
 }
