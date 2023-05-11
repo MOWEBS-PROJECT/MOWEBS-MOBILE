@@ -71,12 +71,70 @@
 					android:layout_width="410dp"
 					android:layout_height="800dp" />
 
+				<ImageView android:id="@+id/bell"
+					android:layout_width="50dp"
+					android:layout_height="40dp"
+					android:layout_marginLeft="285dp"
+					android:layout_marginTop="50dp"
+					app:srcCompat="@drawable/bell" />
+
+				<ImageView android:id="@+id/profile_dashboard"
+					android:layout_width="40dp"
+					android:layout_height="40dp"
+					android:layout_marginLeft="345dp"
+					android:layout_marginTop="50dp"
+					app:srcCompat="@drawable/profile_dashboard" />
+
+
+
 				<RelativeLayout android:id="@+id/dashboard_ek3"
 					android:layout_marginTop="67dp"
 					android:layout_marginStart="21dp"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					>
+
+					<ImageView android:id="@+id/search_bar"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="50dp"
+						android:layout_marginLeft="5dp"
+						app:srcCompat="@drawable/search_bar" />
+
+					<ImageView android:id="@+id/bmw_circle1"
+						android:layout_width="60dp"
+						android:layout_height="60dp"
+						android:layout_marginTop="140dp"
+						android:layout_marginLeft="15dp"
+						app:srcCompat="@drawable/bmw_circle1" />
+
+					<ImageView android:id="@+id/ferrari_circle1"
+						android:layout_width="60dp"
+						android:layout_height="60dp"
+						android:layout_marginTop="140dp"
+						android:layout_marginLeft="105dp"
+						app:srcCompat="@drawable/ferrari_circle1" />
+
+					<ImageView android:id="@+id/mazda_circle1"
+						android:layout_width="60dp"
+						android:layout_height="60dp"
+						android:layout_marginTop="140dp"
+						android:layout_marginLeft="195dp"
+						app:srcCompat="@drawable/mazda_circle1" />
+
+					<ImageView android:id="@+id/tesla_circle1"
+						android:layout_width="60dp"
+						android:layout_height="60dp"
+						android:layout_marginTop="140dp"
+						android:layout_marginLeft="285dp"
+						app:srcCompat="@drawable/tesla_circle1" />
+
+					<ImageView android:id="@+id/setting"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="50dp"
+						margin android:layout_marginLeft="320dp"
+						app:srcCompat="@drawable/setting" />
 
 					<TextView android:id="@+id/dashboard_ek4"
 						android:textStyle="bold"
@@ -92,6 +150,7 @@
 						android:text="@string/dashboard_ek4_string"
 						 />
 
+
 					<androidx.appcompat.widget.AppCompatButton
 						android:id="@+id/btn_seeall"
 						android:layout_width="111.13dp"
@@ -99,18 +158,67 @@
 						android:textSize="13sp"
 						android:textColor="@color/see_all_color"
 						android:layout_marginLeft="246dp"
-						android:layout_marginTop="341dp"
+						android:layout_marginTop="280dp"
 						android:text="@string/see_all_string"
 						android:background="@null"
 						android:textAllCaps="false"/>
 
-					<TextView android:id="@+id/recomended"
+					<androidx.appcompat.widget.AppCompatButton
+						android:id="@+id/bmw"
+						android:layout_width="111.13dp"
+						android:layout_height="33.33dp"
+						android:textSize="13sp"
+						android:textColor="@color/see_all_color"
+						android:layout_marginLeft="-10dp"
+						android:layout_marginTop="220dp"
+						android:text="@string/bmw"
+						android:background="@null"
+						android:textAllCaps="false"/>
+
+					<androidx.appcompat.widget.AppCompatButton
+						android:id="@+id/ferrari"
+						android:layout_width="111.13dp"
+						android:layout_height="33.33dp"
+						android:textSize="13sp"
+						android:textColor="@color/see_all_color"
+						android:layout_marginLeft="80dp"
+						android:layout_marginTop="220dp"
+						android:text="@string/ferrari"
+						android:background="@null"
+						android:textAllCaps="false"/>
+
+					<androidx.appcompat.widget.AppCompatButton
+						android:id="@+id/mazda"
+						android:layout_width="111.13dp"
+						android:layout_height="33.33dp"
+						android:textSize="13sp"
+						android:textColor="@color/see_all_color"
+						android:layout_marginLeft="170dp"
+						android:layout_marginTop="220dp"
+						android:text="@string/mazda"
+						android:background="@null"
+						android:textAllCaps="false"/>
+
+					<androidx.appcompat.widget.AppCompatButton
+						android:id="@+id/tesla"
+						android:layout_width="111.13dp"
+						android:layout_height="33.33dp"
+						android:textSize="13sp"
+						android:textColor="@color/see_all_color"
+						android:layout_marginLeft="260dp"
+						android:layout_marginTop="220dp"
+						android:text="@string/tesla"
+						android:background="@null"
+						android:textAllCaps="false"/>
+
+
+					<TextView android:id="@+id/bestcar"
 						android:layout_gravity="center_horizontal|center"
 						android:gravity="center"
 						android:textSize="15sp"
 						android:textColor="@color/_bg__dashboard_ek2_color"
 						android:layout_marginLeft="5dp"
-						android:layout_marginTop="340dp"
+						android:layout_marginTop="280dp"
 						android:layout_width="127.13dp"
 						android:layout_height="34.33dp"
 						android:text="@string/recomended_string"
@@ -132,43 +240,59 @@
 						android:layout_width="114.11dp"
 						android:layout_height="0dp" />
 
-					<ImageView android:id="@+id/__img___button_car"
-						android:src="@drawable/__img___button_car"
-						android:contentDescription="__img___button_car"
-						 android:layout_marginStart="8dp"
-						android:layout_marginTop="387dp"
-						android:layout_width="360dp"
-						android:layout_height="291.2dp" />
+					#Best Car here
+					<ImageView android:id="@+id/aventador"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="327dp"
+						app:srcCompat="@drawable/aventador" />
 
-					<ImageView android:id="@+id/__img___button"
-						android:src="@drawable/__img___button"
-						android:contentDescription="__img___button"
-						 android:layout_marginStart="0dp"
-						android:layout_marginTop="51dp"
-						android:layout_width="360dp"
-						android:layout_height="242.61dp"
+					<ImageView android:id="@+id/monsory"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="327dp"
+						android:layout_marginLeft="190dp"
+						app:srcCompat="@drawable/monsory" />
+
+					<TextView android:id="@+id/nearby"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:textSize="15sp"
+						android:textColor="@color/_bg__dashboard_ek2_color"
+						android:layout_marginLeft="5dp"
+						android:layout_marginTop="550dp"
+						android:layout_width="127.13dp"
+						android:layout_height="34.33dp"
+						android:text="@string/nearby"
 						/>
 
-					<ImageView android:id="@+id/vector"
-						android:src="@drawable/vector"
-						android:contentDescription="vector"
-						 android:layout_marginStart="321dp"
-						android:layout_marginTop="1dp"
-						android:layout_width="21.3dp"
-						android:layout_height="20.61dp" />
+					<androidx.appcompat.widget.AppCompatButton
+						android:id="@+id/btn_seeall2"
+						android:layout_width="111.13dp"
+						android:layout_height="33.33dp"
+						android:textSize="13sp"
+						android:textColor="@color/see_all_color"
+						android:layout_marginLeft="246dp"
+						android:layout_marginTop="550dp"
+						android:text="@string/see_all_string2"
+						android:background="@null"
+						android:textAllCaps="false"/>
 
+					<ImageView android:id="@+id/roma1"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="600dp"
+						app:srcCompat="@drawable/roma1" />
+
+					<ImageView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="600dp"
+						android:layout_marginLeft="190dp"
+						app:srcCompat="@drawable/alphard1" />
 				</RelativeLayout>
 
-				<TextView
-					android:id="@+id/customer_service"
-					android:layout_width="70dp"
-					android:layout_height="35dp"
-					android:layout_marginLeft="103dp"
-					android:layout_marginTop="285dp"
-					android:text="@string/customer_service_string"
-					android:textColor="@color/customer_service_color"
-					android:textSize="15sp"
-					android:textStyle="bold" />
+
 
 
 				<RelativeLayout android:id="@+id/mdi_more_circle_outline"
@@ -178,13 +302,7 @@
 					android:layout_height="wrap_content"
 					>
 
-					<ImageView android:id="@+id/vector_ek1"
-						android:src="@drawable/vector_ek1"
-						android:contentDescription="vector_ek1"
-						 android:layout_marginStart="3.75dp"
-						android:layout_marginTop="3.75dp"
-						android:layout_width="37.5dp"
-						android:layout_height="37.5dp" />
+
 
 				</RelativeLayout>
 
