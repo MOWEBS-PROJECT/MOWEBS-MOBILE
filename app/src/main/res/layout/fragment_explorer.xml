@@ -60,6 +60,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/filterButtonLowPrice"
                 android:layout_width="90dp"
                 android:layout_height="41dp"
                 android:orientation="vertical"
@@ -73,7 +74,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Termurah"
+                    android:text="Low Price"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins_regular"
                     android:textColor="#B1B1B1"/>
@@ -81,6 +82,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/filterButtonFavorite"
                 android:layout_width="90dp"
                 android:layout_height="41dp"
                 android:orientation="vertical"
@@ -94,7 +96,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Terfavorit"
+                    android:text="Favorite"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins_regular"
                     android:textColor="#B1B1B1"/>
@@ -102,6 +104,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/filterButtonBestSeller"
                 android:layout_width="90dp"
                 android:layout_height="41dp"
                 android:orientation="vertical"
@@ -115,7 +118,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Terlaris"
+                    android:text="Best Seller"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins_regular"
                     android:textColor="#B1B1B1"/>
@@ -123,6 +126,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/filterButtonPromo"
                 android:layout_width="90dp"
                 android:layout_height="41dp"
                 android:orientation="vertical"
@@ -142,379 +146,16 @@
                     android:textColor="#B1B1B1"/>
 
             </LinearLayout>
-
         </LinearLayout>
 
-
-
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewContentExplorer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="33dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/ly_top2">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/ly_top">
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:layout_marginRight="10dp"
-                            android:orientation="vertical"
-                            android:background="@drawable/frame_rounded">
-                            <ImageView
-                                android:layout_width="135dp"
-                                android:layout_height="94dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginLeft="15dp"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/rollsroyce"
-                                android:id="@+id/img_rr"/>
+            android:padding="10dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginBottom="55dp"
+            android:orientation="vertical"/>
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="94dp"
-                                android:layout_marginTop="30dp"
-                                android:orientation="horizontal">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:layout_marginRight="15dp"
-                                    android:background="#ffffff"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Mansory"
-                                        android:textColor="@color/black"
-                                        android:textSize="20dp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Rolls Royce"
-                                        android:textColor="#4B4B4B"
-                                        android:textSize="10dp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:text="Rp1.500k/Day"
-                                        android:textColor="#313131"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold" />
-                                </LinearLayout>
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginTop="30dp"
-                                    android:layout_marginRight="15dp"
-                                    android:src="@drawable/buttondetail" />
-                            </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="25dp"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="vertical"
-                            android:background="@drawable/frame_rounded">
-                            <ImageView
-                                android:layout_width="160dp"
-                                android:layout_height="94dp"
-                                android:layout_marginTop="10dp"
-                                android:src="@drawable/toyota"
-                                android:id="@+id/img_ty"/>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="94dp"
-                                android:layout_marginTop="30dp"
-                                android:orientation="horizontal">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:layout_marginRight="15dp"
-                                    android:background="#ffffff"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Alphard"
-                                        android:textColor="@color/black"
-                                        android:textSize="20dp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Toyota"
-                                        android:textColor="#4B4B4B"
-                                        android:textSize="10dp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:text="Rp1.300k/Day"
-                                        android:textColor="#313131"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold" />
-                                </LinearLayout>
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginTop="30dp"
-                                    android:layout_marginRight="15dp"
-                                    android:src="@drawable/buttondetail" />
-                            </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:id="@+id/lymid2">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/ly_mid">
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:layout_marginRight="10dp"
-                            android:orientation="vertical"
-                            android:background="@drawable/frame_rounded">
-                            <ImageView
-                                android:layout_width="135dp"
-                                android:layout_height="94dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginLeft="15dp"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/lamborghini"
-                                android:id="@+id/img_lm"/>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="94dp"
-                                android:layout_marginTop="30dp"
-                                android:orientation="horizontal">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:layout_marginRight="15dp"
-                                    android:background="#ffffff"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Aventador"
-                                        android:textColor="@color/black"
-                                        android:textSize="20dp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Lamborghini"
-                                        android:textColor="#4B4B4B"
-                                        android:textSize="10dp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:text="Rp1.450k/Day"
-                                        android:textColor="#313131"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold" />
-                                </LinearLayout>
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginTop="30dp"
-                                    android:layout_marginRight="15dp"
-                                    android:src="@drawable/buttondetail" />
-                            </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="25dp"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="vertical"
-                            android:background="@drawable/frame_rounded">
-                            <ImageView
-                                android:layout_width="160dp"
-                                android:layout_height="94dp"
-                                android:layout_marginTop="10dp"
-                                android:src="@drawable/ferrari"
-                                android:id="@+id/img_fr"/>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="94dp"
-                                android:layout_marginTop="30dp"
-                                android:orientation="horizontal">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:layout_marginRight="15dp"
-                                    android:background="#ffffff"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Roma"
-                                        android:textColor="@color/black"
-                                        android:textSize="20dp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Ferrari"
-                                        android:textColor="#4B4B4B"
-                                        android:textSize="10dp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:text="Rp1.450k/Day"
-                                        android:textColor="#313131"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold" />
-                                </LinearLayout>
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginTop="30dp"
-                                    android:layout_marginRight="15dp"
-                                    android:src="@drawable/buttondetail" />
-                            </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/ly_low">
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="25dp"
-                            android:layout_marginRight="10dp"
-                            android:orientation="vertical"
-                            android:background="@drawable/frame_rounded">
-                            <ImageView
-                                android:layout_width="135dp"
-                                android:layout_height="94dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginLeft="15dp"
-                                android:layout_marginRight="15dp"
-                                android:src="@drawable/mb"
-                                android:id="@+id/img_mb"/>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="94dp"
-                                android:layout_marginTop="30dp"
-                                android:orientation="horizontal">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="15dp"
-                                    android:layout_marginRight="15dp"
-                                    android:background="#ffffff"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="E Class"
-                                        android:textColor="@color/black"
-                                        android:textSize="20dp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Mercedes-Benz"
-                                        android:textColor="#4B4B4B"
-                                        android:textSize="10dp"
-                                        android:textStyle="bold" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="15dp"
-                                        android:text="Rp1.350k/Day"
-                                        android:textColor="#313131"
-                                        android:textSize="15dp"
-                                        android:textStyle="bold" />
-                                </LinearLayout>
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginLeft="0dp"
-                                    android:layout_marginTop="30dp"
-                                    android:layout_marginRight="15dp"
-                                    android:src="@drawable/buttondetail" />
-                            </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-        </ScrollView>
     </LinearLayout>
-
-
 </FrameLayout>
