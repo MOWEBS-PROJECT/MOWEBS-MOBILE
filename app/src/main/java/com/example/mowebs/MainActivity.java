@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new DashboardFragment();
                         break;
                     case R.id.navigation_search:
-                        fragment = new ExplorerFragment();
+                        fragment = new ExplorerFragment(MainActivity.this);
                         break;
                     case R.id.navigation_message:
                         fragment = new ChatFragment(MainActivity.this);
