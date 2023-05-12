@@ -5,9 +5,15 @@
     <string name="app_name">Renter</string>
     <string name="ek_img_content">ExportKit Image</string>
     <string name="_20_01_string">20:01</string>
-    <string name="dashboard_ek4_string">Dashboard</string>
+    <string name="dashboard_ek4_string">Renter</string>
     <string name="see_all_string">See All</string>
-    <string name="recomended_string">Recomended</string>
+    <string name="see_all_string2">See All</string>
+    <string name="bmw">BMW</string>
+    <string name="ferrari">Ferrari</string>
+    <string name="mazda">Mazda</string>
+    <string name="tesla">Tesla</string>
+    <string name="recomended_string">Best Car</string>
+    <string name="nearby">Nearby</string>
     <string name="customer_service_string">CustomerService</string>
     <string name="enter_your_username_string">Enter your username</string>
     <string name="enter_your_password_string">Enter your password</string>
