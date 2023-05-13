@@ -22,13 +22,6 @@ public class MobilCardViewHolder extends RecyclerView.ViewHolder {
         merkMobil       = view.findViewById(R.id.merkMobil);
         hargaMobil      = view.findViewById(R.id.hargaMobil);
         containerMobil  = view.findViewById(R.id.containerMobil);
-
-        containerMobil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
     }
 
 }

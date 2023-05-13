@@ -28,36 +28,35 @@
                 android:weightSum="100">
 
                 <EditText
-                    android:layout_width="40dp"
+                    android:id="@+id/editTextSearch"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="80"
                     android:background="@color/white"
                     android:drawableLeft="@drawable/ic_search_gray_24dp"
-                    android:drawablePadding="4dp"
+                    android:drawablePadding="15dp"
                     android:hint="Find the best for you"
+                    android:inputType="text"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
                     android:textSize="14sp"
                     android:padding="12dp"
-                    android:textColor="#000000"
+                    android:textColor="#898989"
+                    android:fontFamily="@font/poppins_regular"
                     android:textColorHint="#C2C2C2" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="38dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="20"
-                    android:src="@drawable/back_icon" />
 
             </LinearLayout>
         </LinearLayout>
 
         <!--        Filter-->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="10dp"
+            android:paddingBottom="7dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/explorer_filter_border">
 
             <LinearLayout
                 android:id="@+id/filterButtonLowPrice"
@@ -151,11 +150,11 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewContentExplorer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_marginTop="33dp"
+            android:layout_height="match_parent"
             android:layout_marginBottom="55dp"
-            android:orientation="vertical"/>
+            android:orientation="vertical" >
+
+        </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
 </FrameLayout>

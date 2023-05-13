@@ -83,7 +83,7 @@ public class SignInActivity extends Activity {
 			public void onClick(View v)
 			{
 //				Pindah ke halaman dashboard
-				Intent intent = new Intent(SignInActivity.this, Dashboard.class);
+				Intent intent = new Intent(SignInActivity.this, MainActivity.class);
 				startActivity(intent);
 			}
 		});

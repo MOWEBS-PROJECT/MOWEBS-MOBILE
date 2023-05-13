@@ -49,7 +49,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     }
 
     private void setDetailsMobil() {
-        String idMobil = "64509d0aba50bed39e450e9d";
+        String idMobil = getIntent().getStringExtra("idm");
         requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(URLDETAILMOBIL + idMobil, new Response.Listener<JSONObject>() {
             @Override

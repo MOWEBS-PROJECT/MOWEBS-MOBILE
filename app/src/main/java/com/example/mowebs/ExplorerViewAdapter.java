@@ -1,6 +1,7 @@
 package com.example.mowebs;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,14 @@ public class ExplorerViewAdapter extends RecyclerView.Adapter<MobilCardViewHolde
         holder.jenisMobil.setText(mobilObject.getJenis());
         new DownloadImage(holder.imgMobil)
                 .execute(mobilObject.getUrl_gambar());
+        holder.containerMobil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ProductDetailActivity.class);
+                intent.putExtra("idm", mobilObject.getId());
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
 
