@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,14 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -43,7 +40,7 @@ public class ExplorerFragment extends Fragment {
 
     Context parentContext;
     RecyclerView recyclerView;
-    ExplorerViewAdapter adapter;
+    ProductCardViewAdapter adapter;
     LinearLayout filterButtonLowPrice, filterButtonFavorite, filterButtonBestSeller, filterButtonPromo;
     private ArrayList<MobilObject> listMobil = new ArrayList<>();
     private RequestQueue requestQueue;
@@ -80,10 +77,20 @@ public class ExplorerFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_explorer, container, false);
         recyclerView = view.findViewById(R.id.recyclerViewContentExplorer);
-
+        MobilObject mobilObject = new MobilObject();
+        mobilObject.setUrl_gambar("https://akcdn.detik.net.id/visual/2019/03/01/e51e8a19-128c-4f05-b259-b9b006a4e36e_169.jpeg?w=650&q=90");
+        mobilObject.setHarga("1500000");
+        mobilObject.setMerk("Ferrari");
+        mobilObject.setJenis("Dongo");
+        listMobil.add(mobilObject);
+        listMobil.add(mobilObject);
+        listMobil.add(mobilObject);
+        listMobil.add(mobilObject);
+        listMobil.add(mobilObject);
+        listMobil.add(mobilObject);
         getAllMobil();
 
-        adapter = new ExplorerViewAdapter(listMobil, parentContext);
+        adapter = new ProductCardViewAdapter(listMobil, parentContext);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(parentContext, 2, LinearLayoutManager.VERTICAL, false));
         recyclerView.addItemDecoration(new SpaceItemDecorationRecyclerView(50,70));
@@ -93,40 +100,40 @@ public class ExplorerFragment extends Fragment {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if (keyEvent.getAction() == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_SEARCH){
-                    getMobilByCloserCharacter(editTextSearch.getText().toString());
+//                    getMobilByCloserCharacter(editTextSearch.getText().toString());
                     return true;
                 };
                 return false;
             }
         });
 
-        filterButtonLowPrice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getMobilByCloserCharacter(editTextSearch.getText().toString());
-            }
-        });
-
-        filterButtonFavorite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getMobilByCloserCharacter(editTextSearch.getText().toString());
-            }
-        });
-
-        filterButtonBestSeller.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getMobilByCloserCharacter(editTextSearch.getText().toString());
-            }
-        });
-
-        filterButtonPromo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getMobilByCloserCharacter(editTextSearch.getText().toString());
-            }
-        });
+//        filterButtonLowPrice.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getMobilByCloserCharacter(editTextSearch.getText().toString());
+//            }
+//        });
+//
+//        filterButtonFavorite.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getMobilByCloserCharacter(editTextSearch.getText().toString());
+//            }
+//        });
+//
+//        filterButtonBestSeller.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getMobilByCloserCharacter(editTextSearch.getText().toString());
+//            }
+//        });
+//
+//        filterButtonPromo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getMobilByCloserCharacter(editTextSearch.getText().toString());
+//            }
+//        });
 
         return view;
     }
