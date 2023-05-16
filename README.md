@@ -4,7 +4,7 @@ Tugas Mobile (Aplikasi Rental Mobil) dan penggunaan API untuk Database.
 ## API
 
 ### Mobil
-- **(GET)** GetMobilById = 
+- **(GET)** GetMobilById
 	- Endpoint : https://ap-southeast-1.aws.data.mongodb-api.com/app/rentalmobil-qrwuq/endpoint/get_mobil_byid
 	- Parameter
 		`id`
@@ -172,3 +172,9 @@ Tugas Mobile (Aplikasi Rental Mobil) dan penggunaan API untuk Database.
 			"comments": string,
 		}
 		```
+
+### User
+- **(GET)** GetUsername
+	- Endpoint : https://ap-southeast-1.aws.data.mongodb-api.com/app/rentalmobil-qrwuq/endpoint/findusernamebyid
+	-Parameter
+		`uid`

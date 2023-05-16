@@ -24,13 +24,18 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.navigationMenu);
         frameContent = findViewById(R.id.fragmentContent);
 
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContent, new DashboardFragment(MainActivity.this))
+                .commit();
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
                 Fragment fragment = null;
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
-                        fragment = new DashboardFragment();
+                        fragment = new DashboardFragment(MainActivity.this);
                         break;
                     case R.id.navigation_search:
                         fragment = new ExplorerFragment(MainActivity.this);
@@ -47,13 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-//        bottomNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//
-//                return true;
-//            }
-//        });
 
     }
 }

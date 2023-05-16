@@ -10,14 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class ExplorerViewAdapter extends RecyclerView.Adapter<MobilCardViewHolder> {
+public class ProductCardViewAdapter extends RecyclerView.Adapter<ProductCardViewHolder> {
 
     private ArrayList<MobilObject> listMobil = new ArrayList<>();
     Context parentContext;
 
-    public ExplorerViewAdapter(ArrayList<MobilObject> listMobil, Context parentContext) {
+    public ProductCardViewAdapter(ArrayList<MobilObject> listMobil, Context parentContext) {
         this.listMobil      = listMobil;
         this.parentContext  = parentContext;
     }
@@ -25,16 +24,16 @@ public class ExplorerViewAdapter extends RecyclerView.Adapter<MobilCardViewHolde
 
     @NonNull
     @Override
-    public MobilCardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProductCardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parentContext)
                 .inflate(R.layout.product_view, parent, false);
 
-        return new MobilCardViewHolder(view);
+        return new ProductCardViewHolder(view);
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull MobilCardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ProductCardViewHolder holder, int position) {
         MobilObject mobilObject = listMobil.get(position);
         holder.merkMobil.setText(mobilObject.getMerk());
         holder.hargaMobil.setText(mobilObject.getHarga());
