@@ -27,5 +27,9 @@
         <item name="android:textSize">11sp</item>
         <item name="android:textColor">#747474</item>
     </style>
+    <style name="SpinnerTheme">
+        <item name="android:textColor">#424242</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
 
 </resources>
