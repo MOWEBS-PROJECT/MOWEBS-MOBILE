@@ -113,7 +113,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="110dp"
             android:layout_height="22dp"
-            android:layout_marginTop="545dp"
+            android:layout_marginTop="540dp"
             android:layout_marginLeft="200dp"
             android:background="@drawable/rate"/>
 
