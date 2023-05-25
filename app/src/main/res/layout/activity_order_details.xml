@@ -5,214 +5,374 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mowebs.OrderDetailActivity">
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F5F5F5">
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:background="@drawable/back"
-            android:layout_marginTop="54dp"
-            android:layout_marginLeft="22dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
+        android:background="#EFF1F4"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="61dp"
-            android:layout_marginLeft="89dp"
-            android:text="@string/order"
-            android:textSize="19sp"
-            android:textColor="@color/black"/>
-        <RelativeLayout
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/backButton"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:background="@drawable/back"
+                android:layout_marginTop="54dp"
+                android:layout_marginLeft="22dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="61dp"
+                android:layout_marginLeft="75dp"
+                android:text="Order Details"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:layout_marginTop="121dp"
+            android:layout_marginTop="40dp"
             android:background="#4E4E4E"
-            android:id="@+id/order">
-            <TextView
+            android:id="@+id/order"
+            android:orientation="horizontal">
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="23dp"
-                android:text="@string/order"
-                android:textSize="15sp"
-                android:textColor="@color/white"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:layout_marginLeft="23dp"
-                android:text="Thank you for choosing us"
-                android:textSize="11sp"
-                android:textColor="@color/white"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/order_check"
-                android:layout_marginLeft="350dp"
-                android:layout_marginTop="13dp"/>
-        </RelativeLayout>
-        <RelativeLayout
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="23dp"
+                    android:text="Order Complete"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_medium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="23dp"
+                    android:text="Thank you for choosing us"
+                    android:textSize="11sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_regular"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|end">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/order_check"
+                    android:layout_marginEnd="30dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_alignTop="@+id/order"
-            android:layout_marginTop="61dp"
-            android:id="@+id/details">
-            <ImageView
+            android:layout_height="wrap_content"
+            android:id="@+id/details"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/maps"
-                android:layout_marginLeft="13dp"
-                android:layout_marginTop="20dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="17dp"
-                android:layout_marginLeft="40dp"
-                android:text="@string/order"
-                android:textSize="16sp"
-                android:textColor="@color/black"/>
-            <TextView
-                android:id="@+id/fahmi_rizky"
-                android:layout_width="322dp"
-                android:layout_height="101dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="40dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="30dp"
-                android:text="@string/customer"
-                android:textAppearance="@style/customer"
-                android:gravity="center_vertical"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="116dp"
-            android:layout_marginTop="120dp"
-            android:background="@drawable/alphard"
-            android:layout_alignTop="@+id/details"
-            android:id="@+id/alphard">
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/pay"
-            android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:layout_marginTop="128dp"
-            android:background="@drawable/bg_pro"
-            android:layout_alignTop="@+id/alphard">
-            <TextView
-                android:id="@+id/payment_met"
-                android:layout_width="132dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="20dp"
-                android:layout_alignParentTop="true"
-                android:text="@string/payment_met"
-                android:textAppearance="@style/payment_met"
-                android:gravity="center_vertical"
-                />
-            <TextView
-                android:id="@+id/cash"
-                android:layout_width="64dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="20dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="20dp"
-                android:text="@string/cash"
-                android:textAppearance="@style/cash"
-                android:gravity="center_vertical"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_alignTop="@+id/pay"
-            android:layout_marginTop="55dp"
-            android:background="@drawable/bg_pro">
-            <TextView
-                android:id="@+id/order_id_a2"
-                android:layout_width="335dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/maps"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Delivery Address"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
                 android:layout_marginTop="5dp"
-                android:layout_alignParentTop="true"
-                android:text="@string/order_id_a2"
-                android:textAppearance="@style/order_id_a2"
-                android:gravity="center_vertical"
-                />
-            <TextView
-                android:id="@+id/order_time_"
-                android:layout_width="349dp"
+                android:paddingStart="35dp">
+                <TextView
+                    android:id="@+id/tvFullname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sukriyatma"
+                    android:fontFamily="@font/poppins_regular"/>
+                <TextView
+                    android:id="@+id/tvPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="089524498356"
+                    android:fontFamily="@font/poppins_regular"/>
+                <TextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Jl. Imam Bonjol No.10, RT.1/RW.7, Babakan, Kota Bogor,  Bogor Tengah, Jawa Barat, ID, 16128"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgMobil"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="20dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="31dp"
-                android:text="@string/order_time_"
-                android:textAppearance="@style/order_time_"
-                android:gravity="center_vertical"
-                />
-            <TextView
-                android:layout_width="349dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/tvBrandMobilCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Toyota Alphard"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Order Total"
+                        android:layout_gravity="bottom"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_semi_bold"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="end">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x"/>
+                            <TextView
+                                android:id="@+id/tvDurationCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Days"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rp"/>
+                            <TextView
+                                android:id="@+id/tvPriceMobilCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1.300.000"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rp"
+                                android:layout_marginTop="5dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_semi_bold"/>
+                            <TextView
+                                android:id="@+id/tvOrderTotalCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="6.500.000"
+                                android:layout_marginTop="5dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_semi_bold"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_marginTop="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="20dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="48dp"
-                android:text="@string/pay_time_"
-                android:textAppearance="@style/order_time_"
-                android:gravity="center_vertical"
-                />
-            <TextView
-                android:layout_width="349dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="20dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="67dp"
-                android:text="@string/ship_time_"
-                android:textAppearance="@style/order_time_"
-                android:gravity="center_vertical"
-                />
-            <TextView
-                android:layout_width="349dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="20dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="85dp"
-                android:text="@string/completed_time_"
-                android:textAppearance="@style/order_time_"
-                android:gravity="center_vertical"
-                />
+                android:orientation="horizontal"
+                android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Order ID"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Order Time"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="#929292"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Duration"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="#929292"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Return"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="#929292"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="end">
+
+                    <TextView
+                        android:id="@+id/tvOrderID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="9sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/tvOrderTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="#929292"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="#929292"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Days"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="#929292"
+                            android:layout_marginLeft="2dp"/>
+
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tvReturnTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="#929292"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@drawable/line"
-                android:layout_marginTop="105dp"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="110dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="113dp"
-                android:layout_marginLeft="78dp" android:background="@drawable/c_service"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="111dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="113dp"
-                android:layout_marginLeft="198dp"
-                android:background="@drawable/rate"/>
+                android:background="@drawable/line" />
 
-        </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="10dp">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/csButton"
+                    android:layout_width="110dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/c_service"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/ratingButton"
+                    android:layout_width="111dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/rate"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bookAgainButton"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_marginTop="650dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/button"
             android:text="Book Again"
             android:textColor="@color/white"
             android:textAllCaps="false"/>
-    </RelativeLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

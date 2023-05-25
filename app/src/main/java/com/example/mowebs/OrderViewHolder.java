@@ -9,13 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class OrderViewHolder extends RecyclerView.ViewHolder {
 
-    CardView cardViewStatusSign;
+    CardView cardViewContainer, cardViewStatusSign;
     ImageView imgMobil;
     TextView tvStatusSign, tvMerkMobil, tvOrderID, tvOrderTime, tvDuration, tvReturnTime, tvOrderTotal;
 
     public OrderViewHolder(View view) {
         super(view);
         cardViewStatusSign = view.findViewById(R.id.cardViewStatusSign);
+        cardViewContainer  = view.findViewById(R.id.cardViewContainer);
         tvStatusSign    = view.findViewById(R.id.tvStatusSign);
         tvMerkMobil     = view.findViewById(R.id.tvMerkMobil);
         tvOrderID       = view.findViewById(R.id.tvOrderID);
