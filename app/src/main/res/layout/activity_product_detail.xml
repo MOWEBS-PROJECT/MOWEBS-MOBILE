@@ -404,6 +404,7 @@
             >
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bookNowButton"
                 android:layout_width="170dp"
                 android:layout_height="35dp"
                 android:text="Book Now"

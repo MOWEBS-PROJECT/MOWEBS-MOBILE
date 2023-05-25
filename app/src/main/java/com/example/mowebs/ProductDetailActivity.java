@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +30,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     private StringRequest stringRequest;
     private static final String URLDETAILMOBIL = "https://ap-southeast-1.aws.data.mongodb-api.com/app/rentalmobil-qrwuq/endpoint/get_mobil_byid?id=";
     ImageView imageMobil;
-    Button backButton;
+    Button backButton, bookNowButton;
     TextView jenisMobil, merkMobil, tvTransmission, tvAcceleration, tvSeat, tvColour, tvFuel, tvDescription;
     RecyclerView recyclerViewReviews;
     ReviewViewAdapter adapter;
@@ -44,13 +45,14 @@ public class ProductDetailActivity extends AppCompatActivity {
         backButton = findViewById(R.id.back_btn);
         jenisMobil = findViewById(R.id.jenisMobil);
         merkMobil = findViewById(R.id.tv_brand);
-        tvTransmission = findViewById(R.id.tvTransmission);
-        tvAcceleration = findViewById(R.id.tvAcceleration);
-        tvSeat = findViewById(R.id.tvSeat);
-        tvColour = findViewById(R.id.tvColour);
-        tvFuel = findViewById(R.id.tvFuel);
-        tvDescription = findViewById(R.id.tvDescription);
+        tvTransmission      = findViewById(R.id.tvTransmission);
+        tvAcceleration      = findViewById(R.id.tvAcceleration);
+        tvSeat              = findViewById(R.id.tvSeat);
+        tvColour            = findViewById(R.id.tvColour);
+        tvFuel              = findViewById(R.id.tvFuel);
+        tvDescription       = findViewById(R.id.tvDescription);
         recyclerViewReviews = findViewById(R.id.recyclerViewReviews);
+        bookNowButton       = findViewById(R.id.bookNowButton);
 
         setDetailsMobil();
 
@@ -62,6 +64,15 @@ public class ProductDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        bookNowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductDetailActivity.this, BookingActivity.class);
+                intent.putExtra("idm", getIntent().getStringExtra("idm"));
+                startActivity(intent);
             }
         });
     }

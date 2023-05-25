@@ -23,5 +23,10 @@
 	<color name="rectangle_7_color">#ffffff</color>
 	<color name="forgot_password___color">#7F7D7D</color>
     <color name="customer_service">#1F1F1F</color>
+	
+	<color name="receivedOrder">#8E8E8E</color>
+	<color name="completeOrder">#6BC45D</color>
+	<color name="cancelOrder">#D84545</color>
+
 
 </resources>
