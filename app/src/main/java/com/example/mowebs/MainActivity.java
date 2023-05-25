@@ -10,7 +10,6 @@ import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.navigation_message:
                         fragment = new ChatFragment(MainActivity.this);
+                        break;
+                    case R.id.nagivation_profile:
+                        fragment = new ProfileFragment(MainActivity.this);
                         break;
                 }
                 if (fragment != null) {

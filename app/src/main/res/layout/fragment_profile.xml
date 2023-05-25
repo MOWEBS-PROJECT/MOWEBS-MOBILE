@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile"
+    tools:context=".ProfileFragment"
     android:background="@drawable/bg_profile">
 
     <!-- TODO: Update blank fragment layout -->
@@ -25,6 +25,7 @@
                 android:fontFamily="@font/poppins_semi_bold"
                 android:layout_marginRight="8dp"/>
             <TextView
+                android:id="@+id/tvUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Muhammad Sukriyatma"
@@ -40,7 +41,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="30dp"/>
         <LinearLayout
-            android:id="@+id/id_pilihan1"
+            android:id="@+id/personalDataButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -64,7 +65,7 @@
                 android:src="@drawable/icon_panah"/>
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/id_pilihan2"
+            android:id="@+id/orderHistoryButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
