@@ -1,6 +1,7 @@
 package com.example.mowebs;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,6 +77,15 @@ public class OrderViewAdapter extends RecyclerView.Adapter<OrderViewHolder> {
         holder.cardViewStatusSign.setCardBackgroundColor(parentContext.getColor(colorStatus));
 
         getDetailsMobil(parentContext, order.getId_mobil(), holder.tvMerkMobil, holder.imgMobil);
+
+        holder.cardViewContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(parentContext, OrderDetailActivity.class);
+                intent.putExtra("orderID", order.getId());
+                parentContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
