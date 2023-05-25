@@ -129,6 +129,11 @@ Tugas Mobile (Aplikasi Rental Mobil) dan penggunaan API untuk Database.
 
 ---
 ### Sewa 
+- **(GET)** GetSewaByID
+	- Endpoint : https://ap-southeast-1.aws.data.mongodb-api.com/app/rentalmobil-qrwuq/endpoint/findsewabyid
+	- Parameter
+		`sewaid`
+		
 - **(GET)** GetSewa
 	- Endpoint : https://ap-southeast-1.aws.data.mongodb-api.com/app/rentalmobil-qrwuq/endpoint/findsewa
 	- Parameter 
