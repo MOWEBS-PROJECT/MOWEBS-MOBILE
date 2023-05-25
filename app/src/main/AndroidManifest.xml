@@ -28,7 +28,7 @@
             android:name=".BookingActivity"
             android:exported="false" />
         <activity
-            android:name=".CompletedActivity"
+            android:name=".OrderActivity"
             android:exported="false" />
         <activity
             android:name=".ExploreActivity"
