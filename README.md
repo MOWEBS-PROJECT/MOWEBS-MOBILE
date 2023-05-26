@@ -61,12 +61,15 @@ Tugas Mobile (Aplikasi Rental Mobil) dan penggunaan API untuk Database.
 ### User
 - **(POST)** Validate/Login
 	- Endpoint : https://ap-southeast-1.aws.data.mongodb-api.com/app/rentalmobil-qrwuq/endpoint/login
-	- Parameter 
+	- Request Body 
 		`username`
 		`password`
+	- Response
+		`_id`
+		
 - **(POST)** Register
 	- Endpoint : https://ap-southeast-1.aws.data.mongodb-api.com/app/rentalmobil-qrwuq/endpoint/register
-	- Parameter 
+	- Request Body 
 		`username`
 		`password`
 		`email`
