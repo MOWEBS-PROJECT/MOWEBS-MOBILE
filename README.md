@@ -110,8 +110,14 @@ Tugas Mobile (Aplikasi Rental Mobil) dan penggunaan API untuk Database.
 		{
 			"value": string,
 			"from": "CUSTOMER"/ "CS",
-			"date": int, //epoch (milisecond)
+			"date": long, //epoch (milisecond)
 			"isupdate": boolean
+		}
+		```
+	- Response
+		```json
+		{
+			"insertedId" : "String"
 		}
 		```
 		
@@ -126,6 +132,11 @@ Tugas Mobile (Aplikasi Rental Mobil) dan penggunaan API untuk Database.
 			"isupdate": true
 		}
 		```
+
+- **(POST)** DeleteChat
+	- Endpoint : https://ap-southeast-1.aws.data.mongodb-api.com/app/rentalmobil-qrwuq/endpoint/deletechat
+	- Parameter
+		`id`
 
 ---
 ### Sewa 
