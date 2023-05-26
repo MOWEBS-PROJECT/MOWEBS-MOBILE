@@ -35,7 +35,7 @@ public class ChatViewHolder extends RecyclerView.ViewHolder {
 
     // melakukan penambahan setting pada holder
     public void bind(ChatObject chatObject) {
-        boolean  update = chatObject.getIsUpdated();
+        boolean  update = chatObject.getIsUpdating();
 
         // merubah layout jika chat berasal dari CUSTOMER
         if (chatObject.get_from() == ChatObject.CUSTOMER) {
