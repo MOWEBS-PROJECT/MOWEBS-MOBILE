@@ -7,7 +7,7 @@ public class ChatObject {
     private String value, _from, date;
     private boolean isupdated = false;
     private boolean isUpdating = false;
-    private long _id;
+    private String _id;
 
     public ChatObject() {
     }
@@ -33,7 +33,7 @@ public class ChatObject {
     }
 
     // mengembalikan id
-    public long get_id() {
+    public String get_id() {
         return _id;
     }
 
@@ -72,7 +72,7 @@ public class ChatObject {
      * the id to set
      * @param _id
      */
-    public void set_id(long _id) {
+    public void set_id(String _id) {
         this._id = _id;
     }
 

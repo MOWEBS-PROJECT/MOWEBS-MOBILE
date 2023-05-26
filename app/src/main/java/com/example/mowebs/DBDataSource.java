@@ -60,7 +60,7 @@ public class DBDataSource {
             ChatObject chat = new ChatObject();
 
             // set atribut pada objek chat dengan data kursor yang diambil dari database
-            chat.set_id(cursor.getLong(0));
+            chat.set_id(cursor.getString(0));
             chat.setValue(cursor.getString(1));
             chat.set_from(cursor.getString(2));
             chat.setDate(cursor.getString(3));
@@ -89,7 +89,7 @@ public class DBDataSource {
             return daftarChat;
         }
         // menghapus chat
-        public void deleteChat(long id){
+        public void deleteChat(String id){
             // mengambil id ChatObject lalu dimasukan kedalam variable s
             String s = " _id=" + id;
             database.delete(DBHelper.TABLE_NAME,s,null);

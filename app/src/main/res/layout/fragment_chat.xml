@@ -102,15 +102,6 @@
             app:layout_constraintBottom_toTopOf="@+id/editMessage_parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_back"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:drawableTop="@drawable/btn_back"
-                android:background="@null"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
