@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,7 +25,8 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    LinearLayout orderHistoryButton, personalDataButton;
+    LinearLayout orderHistoryButton, personalDataButton, logOutButton;
+    TextView tvUserName;
     Context parentContext;
 
     public ProfileFragment() {
@@ -59,6 +61,22 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         orderHistoryButton = view.findViewById(R.id.orderHistoryButton);
         personalDataButton = view.findViewById(R.id.personalDataButton);
+        logOutButton       = view.findViewById(R.id.logOutButton);
+        tvUserName         = view.findViewById(R.id.tvUserName);
+
+        tvUserName.setText(Preference.getUsername(parentContext));
+
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), SignInActivity.class);
+                getActivity().startActivity(intent);
+                if (getActivity() != null) {
+                    getActivity().finish();
+                }
+
+            }
+        });
 
         orderHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,283 +1,139 @@
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	tools:context="com.example.mowebs.SignInActivity">
+	android:layout_height="match_parent"
+	tools:context="com.example.mowebs.SignInActivity"
+	android:orientation="vertical"
+	android:background="#969EAB">
 
-	<ScrollView android:id="@+id/sign_in" 
-		android:layout_width="wrap_content" 
-		android:layout_height="match_parent" >
-
-		<RelativeLayout android:id="@+id/content_container" 
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content" >
-
-
-
-			<RelativeLayout android:id="@+id/page_sign_in_ek1"
-				android:layout_marginTop="0dp"
-				android:layout_marginStart="0dp"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				>
-
-				<View   android:id="@+id/_bg__sign_in_ek2"
-					android:background="@drawable/_bg__sign_in_ek2_shape"
-					 android:layout_marginStart="0dp"
-					android:layout_marginTop="0dp"
-					android:layout_width="412dp"
-					android:layout_height="844dp" />
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="70dp"
+		android:layout_marginRight="25dp"
+		android:layout_marginLeft="25dp"
+		android:layout_marginBottom="10dp"
+		android:text="Welcome"
+		android:textSize="40dp"
+		android:fontFamily="@font/poppins_semi_bold"
+		android:layout_gravity="center"
+		android:textColor="#FFFFFF"
+		android:id="@+id/tv_regis"/>
 
 
-				<RelativeLayout android:id="@+id/login_username"
-					android:layout_marginTop="371dp"
-					android:layout_marginStart="25dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					>
+	<ImageView
+		android:id="@+id/img_car"
+		android:layout_width="wrap_content"
+		android:layout_height="162dp"
+		android:layout_marginRight="25dp"
+		android:foregroundGravity="center"
+		android:src="@drawable/car" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="59dp"
+		android:layout_marginTop="30dp"
+		android:layout_marginRight="25dp"
+		android:layout_marginLeft="25dp"
+		android:background="@drawable/frame_input"
+		android:orientation="horizontal">
+		<ImageView
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:src="@drawable/username_icon"
+			android:layout_marginLeft="5dp"
+			android:padding="10dp"
+			android:layout_gravity="center"/>
+		<EditText
+			android:id="@+id/editTextUsername"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:hint="Enter your username"
+			android:fontFamily="@font/poppins_regular"
+			android:textColor="#000000"
+			android:textColorHint="#707070"
+			android:background="@null"
+			android:padding="10dp"
+			android:imeOptions="actionDone"
+			android:maxLines="1" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="59dp"
+		android:layout_marginTop="10dp"
+		android:layout_marginRight="25dp"
+		android:layout_marginLeft="25dp"
+		android:background="@drawable/frame_input"
+		android:orientation="horizontal">
+		<ImageView
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:src="@drawable/password_icon"
+			android:layout_marginLeft="5dp"
+			android:padding="10dp"
+			android:layout_gravity="center"/>
+		<EditText
+			android:id="@+id/editTextPassword"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:hint="Enter your password"
+			android:fontFamily="@font/poppins_regular"
+			android:textColor="#000000"
+			android:textColorHint="#707070"
+			android:background="@null"
+			android:padding="10dp"
+			android:inputType="textPassword"
+			android:imeOptions="actionDone"
+			android:maxLines="1"
+			android:cursorVisible="false"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="150dp"
+		android:layout_marginBottom="5dp"
+		android:layout_marginRight="25dp"
+		android:layout_marginLeft="25dp"
+		android:orientation="horizontal">
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/signinButton"
+			android:layout_width="350dp"
+			android:layout_height="60dp"
+			android:background="@drawable/frame_signup"
+			android:text= "Sign In"
+			android:textSize="20dp"
+			android:textColor="#D8D8D8"
+			android:textAllCaps="false"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginRight="115dp"
+		android:layout_marginLeft="115dp"
+		android:orientation="horizontal">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="1dp"
+			android:text="Don't have an account?"
+			android:textColor="#FFFFFF"
+			android:textSize="12dp" />
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/signUpButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Sign Up"
+			android:textSize="12sp"
+			android:background="@null"
+			android:textAllCaps="false"
+			android:textColor="#303030"
+			android:fontFamily="@font/poppins_semi_bold"/>
+
+	</LinearLayout>
 
 
-					<RelativeLayout android:id="@+id/login_username_ek1"
-						android:layout_marginTop="0dp"
-						android:layout_marginStart="0dp"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						>
-
-						<View   android:id="@+id/rectangle_6"
-							android:background="@drawable/rectangle_6_shape"
-							 android:layout_marginStart="0dp"
-							android:layout_marginTop="0dp"
-							android:layout_width="360dp"
-							android:layout_height="59dp" />
-
-						<TextView android:id="@+id/enter_your_username"
-							android:textSize="17sp"
-							android:textColor="@color/enter_your_username_color"
-							android:layout_marginLeft="66dp"
-							android:layout_marginTop="17dp"
-							android:layout_width="205.5dp"
-							android:layout_height="49.5dp"
-							android:text="@string/enter_your_username_string"
-							 />
-
-
-						<RelativeLayout android:id="@+id/____icon__user_"
-							android:layout_marginTop="19dp"
-							android:layout_marginStart="21dp"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							>
-
-
-							<RelativeLayout android:id="@+id/group"
-								android:layout_marginTop="0dp"
-								android:layout_marginStart="0dp"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								>
-
-								<ImageView android:id="@+id/vector"
-									android:src="@drawable/vector"
-									android:contentDescription="vector"
-									 android:layout_marginStart="4dp"
-									android:layout_marginTop="0dp"
-									android:layout_width="10.45dp"
-									android:layout_height="9.27dp" />
-
-								<ImageView android:id="@+id/vector_ek1"
-									android:src="@drawable/vector_ek1"
-									android:contentDescription="vector_ek1"
-									 android:layout_marginStart="0dp"
-									android:layout_marginTop="12dp"
-									android:layout_width="19dp"
-									android:layout_height="7.41dp" />
-
-							</RelativeLayout>
-
-						</RelativeLayout>
-
-					</RelativeLayout>
-
-				</RelativeLayout>
-
-
-				<RelativeLayout android:id="@+id/login_password"
-					android:layout_marginTop="461dp"
-					android:layout_marginStart="25dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					>
-
-					<View   android:id="@+id/rectangle_6_ek1"
-						android:background="@drawable/rectangle_6_ek1_shape"
-						 android:layout_marginStart="0dp"
-						android:layout_marginTop="0dp"
-						android:layout_width="360dp"
-						android:layout_height="59dp" />
-
-					<TextView android:id="@+id/enter_your_password"
-						android:textSize="17sp"
-						android:textColor="@color/enter_your_username_color"
-						android:layout_marginLeft="66dp"
-						android:layout_marginTop="17dp"
-						android:layout_width="205.5dp"
-						android:layout_height="49.5dp"
-						android:text="@string/enter_your_password_string"
-						 />
-
-
-					<RelativeLayout android:id="@+id/____icon__lock_locked_"
-						android:layout_marginTop="18dp"
-						android:layout_marginStart="19dp"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						>
-
-						<ImageView android:id="@+id/vector_ek2"
-							android:src="@drawable/vector_ek2"
-							android:contentDescription="vector_ek2"
-							 android:layout_marginStart="0dp"
-							android:layout_marginTop="0dp"
-							android:layout_width="23dp"
-							android:layout_height="23dp" />
-
-					</RelativeLayout>
-
-				</RelativeLayout>
-
-
-				<RelativeLayout android:id="@+id/logo"
-					android:layout_marginTop="142dp"
-					android:layout_marginStart="60dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					>
-
-					<View   android:id="@+id/rectangle_8"
-						android:background="@drawable/rectangle_8_shape"
-						 android:layout_marginStart="0dp"
-						android:layout_marginTop="0dp"
-						android:layout_width="260dp"
-						android:layout_height="177dp"
-						android:layout_marginLeft="15dp"/>
-
-					<TextView android:id="@+id/logo_ek1"
-						android:layout_gravity="center_horizontal|center"
-						android:gravity="center"
-						android:textSize="25sp"
-						android:textColor="@color/_bg__sign_in_ek2_color"
-						android:layout_marginLeft="36dp"
-						android:layout_marginTop="27dp"
-						android:layout_width="212dp"
-						android:layout_height="121.5dp"
-						android:text="@string/logo_ek1_string"
-						 />
-
-				</RelativeLayout>
-
-				<TextView android:id="@+id/welcome_"
-					android:textStyle="bold"
-					android:layout_gravity="center_horizontal|center"
-					android:gravity="center"
-					android:textSize="25sp"
-					android:textColor="@color/rectangle_6_color"
-					android:layout_marginLeft="36dp"
-					android:layout_marginTop="47dp"
-					android:layout_width="327dp"
-					android:layout_height="81.5dp"
-					android:text="@string/welcome__string"
-					 />
-
-				<RelativeLayout
-					android:id="@+id/sign_in_"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginStart="1dp"
-					android:layout_marginTop="680dp"
-					android:gravity="center">
-
-					<androidx.appcompat.widget.AppCompatButton
-						android:id="@+id/sign_in_ek4"
-						android:layout_width="350dp"
-						android:layout_height="60dp"
-						android:background="@drawable/rectangle_7_shape"
-						android:text="@string/sign_in_ek4_string"
-
-						/>
-					<TextView
-						android:id="@+id/don_t_have_an_account__sign_up"
-						android:layout_width="258.5dp"
-						android:layout_height="33.5dp"
-						android:layout_marginLeft="30dp"
-						android:layout_marginTop="72dp"
-						android:text="@string/don_t_have_an_account__sign_up_string"
-						android:textColor="@color/rectangle_6_color"
-						android:textSize="15sp" />
-
-				</RelativeLayout>
-
-
-
-
-				<RelativeLayout android:id="@+id/remember_sign_in"
-					android:layout_marginTop="539dp"
-					android:layout_marginStart="49dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					>
-
-
-					<RelativeLayout android:id="@+id/remember___forgot_pw"
-						android:layout_marginTop="0dp"
-						android:layout_marginStart="0dp"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						>
-
-						<TextView android:id="@+id/forgot_password__"
-							android:textSize="14sp"
-							android:textColor="@color/forgot_password___color"
-							android:layout_marginLeft="210dp"
-							android:layout_marginTop="4dp"
-							android:layout_width="142dp"
-							android:layout_height="24dp"
-							android:text="@string/forgot_password___string"
-							 />
-
-
-						<RelativeLayout android:id="@+id/remember_me"
-							android:layout_marginTop="0dp"
-							android:layout_marginStart="0dp"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							>
-
-							<TextView android:id="@+id/remember_me_ek1"
-								android:textSize="14sp"
-								android:textColor="@color/forgot_password___color"
-								android:layout_marginLeft="0dp"
-								android:layout_marginTop="4dp"
-								android:layout_width="142dp"
-								android:layout_height="24dp"
-								android:text="@string/remember_me_ek1_string"
-								 />
-
-						</RelativeLayout>
-
-					</RelativeLayout>
-
-				</RelativeLayout>
-
-				<View   android:id="@+id/rectangle_5"
-					android:background="@drawable/rectangle_5_shape"
-					 android:layout_marginStart="30dp"
-					android:layout_marginTop="546dp"
-					android:layout_width="14dp"
-					android:layout_height="14dp" />
-
-			</RelativeLayout>
-		</RelativeLayout>
-
-	</ScrollView>
-</HorizontalScrollView>
+</LinearLayout>

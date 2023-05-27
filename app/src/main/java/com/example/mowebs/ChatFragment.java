@@ -105,7 +105,7 @@ public class ChatFragment extends Fragment {
         // Deklarasi dan inisialisasi variabel yang bertype ArrayList dengan value berbentuk ChatObject
         // Datanya diambil dari database dengan method
 //        listChat = dataSource.getAllChat();
-        readMessage("64508e8e9198e0fc0a17588f");
+        readMessage(Preference.getUserId(contextParent));
         // Inisialisasi adapter
         adapterChat = new ChatViewAdapter(listChat, contextParent, inputMessage, btnSend, editMessageContainer, recyclerViewMessage);
         // Set adapter dari RecyclerView menggunakan adapter
@@ -121,7 +121,7 @@ public class ChatFragment extends Fragment {
 
                 inputMessage.setText("");
 
-                createMessage("64508e8e9198e0fc0a17588f", value);
+                createMessage(Preference.getUserId(contextParent), value);
 
                 // Melakukan input data ke database
 //                dataSource.createChat(value, "CUSTOMER","" + date.getHours() + "." + date.getMinutes(), 0);

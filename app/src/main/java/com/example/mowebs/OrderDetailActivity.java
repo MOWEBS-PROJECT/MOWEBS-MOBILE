@@ -83,7 +83,7 @@ public class OrderDetailActivity extends AppCompatActivity {
 
         requestQueue = Volley.newRequestQueue(OrderDetailActivity.this);
 
-        getPersonalDetails("64508e8e9198e0fc0a17588f");
+        getPersonalDetails(Preference.getUserId(OrderDetailActivity.this));
         getOrderDetails(getIntent().getStringExtra("orderID"));
     }
 
