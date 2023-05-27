@@ -51,12 +51,12 @@ public class PersonalDataActivity extends AppCompatActivity {
 
         requestQueue = Volley.newRequestQueue(PersonalDataActivity.this);
 
-        getPersonalData("64508e8e9198e0fc0a17588f");
+        getPersonalData(Preference.getUserId(PersonalDataActivity.this));
 
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updatePersonalData("64508e8e9198e0fc0a17588f");
+                updatePersonalData(Preference.getUserId(PersonalDataActivity.this));
             }
         });
 
