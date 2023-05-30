@@ -73,6 +73,25 @@ public class RatingActivity extends AppCompatActivity {
         });
         getPersonalData(Preference.getUserId(RatingActivity.this));
         getMobilDetail(getIntent().getStringExtra("idm"));
+        getSewa(Preference.getUserId(RatingActivity.this));
+    }
+
+    private void getSewa(String uid) {
+        String path = "/findsewabyid";
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(RequestDatabase.ENDPOINT + path + "?id=" + uid, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    durasi.setText(response.getString("durasi"));
+                } catch (JSONException e) {}
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(RatingActivity.this, "Failure Fetch Data", Toast.LENGTH_SHORT).show();
+            }
+        });
+        requestQueue.add(jsonObjectRequest);
     }
 
     private void getMobilDetail(String mid) {
