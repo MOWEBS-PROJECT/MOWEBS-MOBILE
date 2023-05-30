@@ -58,6 +58,7 @@
                 android:textColor="#606060"
                 android:fontFamily="@font/poppins_regular"/>
             <TextView
+                android:id="@+id/id_AlamatRating"
                 android:layout_width="250dp"
                 android:layout_height="70dp"
                 android:background="@drawable/frame_input2"
@@ -81,6 +82,7 @@
                 android:textColor="#606060"
                 android:fontFamily="@font/poppins_regular"/>
             <TextView
+                android:id="@+id/id_MerkMobilRating"
                 android:layout_width="250dp"
                 android:layout_height="30dp"
                 android:background="@drawable/frame_input2"
@@ -104,6 +106,7 @@
                 android:textColor="#606060"
                 android:fontFamily="@font/poppins_regular"/>
             <TextView
+                android:id="@+id/id_DurasiRating"
                 android:layout_width="150dp"
                 android:layout_height="30dp"
                 android:background="@drawable/frame_input2"
@@ -136,6 +139,7 @@
                 android:textColor="#606060"
                 android:fontFamily="@font/poppins_regular"/>
             <TextView
+                android:id="@+id/id_HargaRating"
                 android:layout_width="250dp"
                 android:layout_height="30dp"
                 android:background="@drawable/frame_input2"
@@ -159,6 +163,7 @@
                 android:textColor="#606060"
                 android:fontFamily="@font/poppins_regular"/>
             <TextView
+                android:id="@+id/id_TotalRating"
                 android:layout_width="250dp"
                 android:layout_height="30dp"
                 android:background="@drawable/frame_input2"
@@ -189,6 +194,7 @@
                 android:textColor="#606060"
                 android:fontFamily="@font/poppins_regular"/>
             <RatingBar
+                android:id="@+id/id_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="61dp"/>
@@ -206,6 +212,7 @@
                 android:textColor="#606060"
                 android:fontFamily="@font/poppins_regular"/>
             <EditText
+                android:id="@+id/id_comment"
                 android:layout_width="250dp"
                 android:layout_height="150dp"
                 android:background="@drawable/frame_input2"
@@ -224,7 +231,7 @@
             android:layout_marginLeft="120dp"
             >
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/cancelButton"
+                android:id="@+id/id_cancel"
                 android:layout_width="120dp"
                 android:layout_height="30dp"
                 android:text="Cancel"
@@ -238,7 +245,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/confirmButton"
+                android:id="@+id/id_send"
                 android:layout_width="120dp"
                 android:layout_height="30dp"
                 android:text="Confirm"
