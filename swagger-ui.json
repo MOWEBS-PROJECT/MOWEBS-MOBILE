@@ -1,0 +1,756 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API Documentation MOWEBS Project",
+    "description": "\n[**MOWEBS**](https://github.com/MOWEBS-PROJECT/MOWEBS-MOBILE) Project:\n  - Mobile Development\n  - Web Development\n  - System Client Server\n\nTeam:\n- Muhammad Sukriyatma - J0303211141\n- Zaky Ahmad Faisal\n- Hasan Abdurrahman\n- Maryetha\n- Nova\n\n_[**Mobile Project Repository**](https://github.com/MOWEBS-PROJECT/MOWEBS-MOBILE)_",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "sukriyatma@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://ap-southeast-1.aws.data.mongodb-api.com/app/rentalmobil-qrwuq/endpoint"
+    }
+  ],
+  "tags": [
+    {
+      "name": "MOBIL"
+    },
+    {
+      "name": "USER"
+    },
+    {
+      "name": "CHAT"
+    },
+    {
+      "name": "SEWA"
+    },
+    {
+      "name": "REVIEW"
+    }
+  ],
+  "paths": {
+    "/get_mobil_byid{id}": {
+      "get": {
+        "tags": [
+          "MOBIL"
+        ],
+        "summary": "Get a Mobil",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MOBIL"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_all_mobil": {
+      "get": {
+        "tags": [
+          "MOBIL"
+        ],
+        "summary": "Get all Mobil",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MOBIL"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/insertmobil": {
+      "post": {
+        "tags": [
+          "MOBIL"
+        ],
+        "summary": "Post a Mobil",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BODY_INSERT_MOBIL"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "409": {
+            "description": "Data Already Exist"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "USER"
+        ],
+        "summary": "Validate User",
+        "requestBody": {
+          "description": "Checking users",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BODY_USER_LOGIN"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RESPONSE_USER_LOGIN"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "USER"
+        ],
+        "summary": "Register User",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BODY_USER_REGISTER"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Created"
+          },
+          "409": {
+            "description": "Data Already Exist"
+          }
+        }
+      }
+    },
+    "/findusernamebyid{uid}": {
+      "get": {
+        "tags": [
+          "USER"
+        ],
+        "summary": "Find Username User By ID",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/getchats{uid}": {
+      "get": {
+        "tags": [
+          "CHAT"
+        ],
+        "summary": "Get all Chats by UserID",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RESPONSE_GET_CHATS"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/insertchat{uid}": {
+      "post": {
+        "tags": [
+          "CHAT"
+        ],
+        "summary": "Post a Chat",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BODY_INSERT_CHATS"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "insertedId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/updatechat{id}": {
+      "post": {
+        "tags": [
+          "CHAT"
+        ],
+        "summary": "Update a chat",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  },
+                  "isupdate": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated"
+          }
+        }
+      }
+    },
+    "/deletechat{id}": {
+      "post": {
+        "tags": [
+          "CHAT"
+        ],
+        "summary": "Delete a chat",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Deleted"
+          }
+        }
+      }
+    },
+    "/findsewabyid{sewaid}": {
+      "get": {
+        "tags": [
+          "SEWA"
+        ],
+        "summary": "Get Sewa By ID",
+        "parameters": [
+          {
+            "name": "sewaid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RESPONSE_GET_SEWA"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/findsewa{uid}": {
+      "get": {
+        "tags": [
+          "SEWA"
+        ],
+        "summary": "Get All Sewa a User",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RESPONSE_GET_SEWA"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/insertsewa{uid}{mid}": {
+      "post": {
+        "tags": [
+          "SEWA"
+        ],
+        "summary": "Post a Sewa",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BODY_INSERT_SEWA"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/insertreview{uid}{mid}": {
+      "post": {
+        "tags": [
+          "REVIEW"
+        ],
+        "summary": "Post a Review",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BODY_INSERT_REVIEW"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Post a Review"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BODY_INSERT_REVIEW": {
+        "type": "object",
+        "properties": {
+          "rate": {
+            "type": "integer"
+          },
+          "date": {
+            "type": "integer"
+          },
+          "comments": {
+            "type": "string"
+          }
+        }
+      },
+      "BODY_INSERT_SEWA": {
+        "type": "object",
+        "properties": {
+          "durasi": {
+            "type": "integer"
+          },
+          "total_harga": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          },
+          "w_pengembalian": {
+            "type": "integer"
+          },
+          "w_pembayaran": {
+            "type": "integer"
+          },
+          "w_pemesanan": {
+            "type": "integer"
+          }
+        }
+      },
+      "RESPONSE_GET_SEWA": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "id_mobil": {
+            "type": "string"
+          },
+          "id_user": {
+            "type": "string"
+          },
+          "durasi": {
+            "type": "integer"
+          },
+          "total_harga": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string"
+          },
+          "w_pengembalian": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "w_pembayaran": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "w_pemesanan": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "BODY_INSERT_CHATS": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "date": {
+            "type": "number"
+          },
+          "isupdate": {
+            "type": "boolean"
+          }
+        }
+      },
+      "RESPONSE_GET_CHATS": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "date": {
+            "type": "number"
+          },
+          "isupdate": {
+            "type": "boolean"
+          },
+          "id_user": {
+            "type": "string"
+          }
+        }
+      },
+      "BODY_INSERT_MOBIL": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "deskripsi": {
+            "type": "string"
+          },
+          "harga": {
+            "type": "string",
+            "example": "7000000"
+          },
+          "jenis": {
+            "type": "string"
+          },
+          "merk": {
+            "type": "string"
+          },
+          "plat": {
+            "type": "string"
+          },
+          "url_gambar": {
+            "type": "string"
+          },
+          "spesifikasi": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SPESIFIKASI"
+            }
+          }
+        }
+      },
+      "MOBIL": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "deskripsi": {
+            "type": "string"
+          },
+          "harga": {
+            "type": "string",
+            "example": "7000000"
+          },
+          "jenis": {
+            "type": "string"
+          },
+          "merk": {
+            "type": "string"
+          },
+          "plat": {
+            "type": "string"
+          },
+          "url_gambar": {
+            "type": "string"
+          },
+          "reviews": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/REVIEWS"
+            }
+          },
+          "spesifikasi": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SPESIFIKASI"
+            }
+          }
+        }
+      },
+      "SPESIFIKASI": {
+        "type": "object",
+        "properties": {
+          "akselerasi": {
+            "type": "string"
+          },
+          "fuel": {
+            "type": "string"
+          },
+          "kursi": {
+            "type": "string"
+          },
+          "transmisi": {
+            "type": "string"
+          },
+          "warna": {
+            "type": "string"
+          }
+        }
+      },
+      "REVIEWS": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "comments": {
+            "type": "string"
+          },
+          "date": {
+            "type": "number"
+          },
+          "rate": {
+            "type": "integer"
+          }
+        }
+      },
+      "BODY_USER_LOGIN": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "RESPONSE_USER_LOGIN": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          }
+        }
+      },
+      "BODY_USER_REGISTER": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
