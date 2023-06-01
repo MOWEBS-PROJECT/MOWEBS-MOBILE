@@ -69,7 +69,7 @@ public class BookingActivity extends AppCompatActivity {
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createBooking("64508e8e9198e0fc0a17588f", getIntent().getStringExtra("idm"));
+                createBooking(Preference.getUserId(BookingActivity.this), getIntent().getStringExtra("idm"));
                 finish();
             }
         });
@@ -128,7 +128,7 @@ public class BookingActivity extends AppCompatActivity {
             }
         });
 
-        getPersonalData("64508e8e9198e0fc0a17588f");
+        getPersonalData(Preference.getUserId(BookingActivity.this));
         getMobilDetail(getIntent().getStringExtra("idm"));
         simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
         editTextDate.setText(simpleDateFormat.format(new Date()));
