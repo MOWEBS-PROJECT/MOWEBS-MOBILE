@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mowebs.RatingActivity"
-    tools:ignore="MissingConstraints">
+    tools:ignore="MissingConstraints"
+    android:background="#EFF1F4">
 
     <LinearLayout
         android:layout_width="wrap_content"
