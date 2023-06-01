@@ -71,10 +71,12 @@ public class DashboardFragment extends Fragment {
         recyclerViewBestCar = view.findViewById(R.id.recyclerViewBestCarContent);
         recyclerViewBestCar.setAdapter(adapterBestCar);
         recyclerViewBestCar.setLayoutManager(new LinearLayoutManager(parentContext, LinearLayoutManager.HORIZONTAL, false));
+        recyclerViewBestCar.addItemDecoration(new SpaceItemDecorationRecyclerView(50, 0));
 
         recyclerViewNearbyCar = view.findViewById(R.id.recyclerViewNearbyContent);
         recyclerViewNearbyCar.setAdapter(adapterNearbyCar);
         recyclerViewNearbyCar.setLayoutManager(new LinearLayoutManager(parentContext, LinearLayoutManager.HORIZONTAL, false));
+        recyclerViewNearbyCar.addItemDecoration(new SpaceItemDecorationRecyclerView(50, 0));
 
         horizontalScrollViewBrand = view.findViewById(R.id.horizontalScrollViewBrand);
         horizontalScrollViewBrand.setOnClickListener(new View.OnClickListener() {
