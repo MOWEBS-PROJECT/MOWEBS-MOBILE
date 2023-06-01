@@ -31,7 +31,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     private static final String URLDETAILMOBIL = "https://ap-southeast-1.aws.data.mongodb-api.com/app/rentalmobil-qrwuq/endpoint/get_mobil_byid?id=";
     ImageView imageMobil;
     Button backButton, bookNowButton;
-    TextView jenisMobil, merkMobil, tvTransmission, tvAcceleration, tvSeat, tvColour, tvFuel, tvDescription;
+    TextView jenisMobil, merkMobil, tvTransmission, tvAcceleration, tvSeat, tvColour, tvFuel, tvDescription, tvPriceMobil;
     RecyclerView recyclerViewReviews;
     ReviewViewAdapter adapter;
     ArrayList<ReviewObject> listReviews = new ArrayList<>();
@@ -44,7 +44,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         imageMobil = findViewById(R.id.imageMobil);
         backButton = findViewById(R.id.back_btn);
         jenisMobil = findViewById(R.id.jenisMobil);
-        merkMobil = findViewById(R.id.tv_brand);
+        merkMobil  = findViewById(R.id.tv_brand);
+        tvPriceMobil = findViewById(R.id.tvPriceMobil);
         tvTransmission      = findViewById(R.id.tvTransmission);
         tvAcceleration      = findViewById(R.id.tvAcceleration);
         tvSeat              = findViewById(R.id.tvSeat);
@@ -93,6 +94,8 @@ public class ProductDetailActivity extends AppCompatActivity {
                     tvSeat.setText(objSpesifikasiMobil.getString("kursi"));
                     tvColour.setText(objSpesifikasiMobil.getString("warna"));
                     tvFuel.setText(objSpesifikasiMobil.getString("fuel"));
+
+                    tvPriceMobil.setText(response.getString("harga"));
                     new DownloadImage(imageMobil)
                             .execute(response.getString("url_gambar"));
                     tvDescription.setText(response.getString("deskripsi"));
