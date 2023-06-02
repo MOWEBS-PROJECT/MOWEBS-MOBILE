@@ -86,21 +86,6 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        MobilObject mobilObject = new MobilObject();
-        mobilObject.setUrl_gambar("https://akcdn.detik.net.id/visual/2019/03/01/e51e8a19-128c-4f05-b259-b9b006a4e36e_169.jpeg?w=650&q=90");
-        mobilObject.setHarga("1500000");
-        mobilObject.setMerk("Ferrari");
-        mobilObject.setJenis("Dongo");
-        listBestCar.add(mobilObject);
-        listBestCar.add(mobilObject);
-        listBestCar.add(mobilObject);
-        listBestCar.add(mobilObject);
-
-        listNearbyCar.add(mobilObject);
-        listNearbyCar.add(mobilObject);
-        listNearbyCar.add(mobilObject);
-        listNearbyCar.add(mobilObject);
-
         adapterNearbyCar.notifyDataSetChanged();
         adapterBestCar.notifyDataSetChanged();
 
