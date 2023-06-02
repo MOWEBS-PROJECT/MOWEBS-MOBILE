@@ -13,6 +13,16 @@ import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 /**
@@ -32,6 +42,7 @@ public class DashboardFragment extends Fragment {
     RecyclerView recyclerViewBestCar, recyclerViewNearbyCar;
     ProductCardViewAdapter adapterBestCar, adapterNearbyCar;
     HorizontalScrollView horizontalScrollViewBrand;
+    RequestQueue requestQueue;
     ArrayList<MobilObject> listBestCar   = new ArrayList<>();
     ArrayList<MobilObject> listNearbyCar = new ArrayList<>();
 
@@ -65,6 +76,7 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        requestQueue = Volley.newRequestQueue(parentContext);
         adapterBestCar = new ProductCardViewAdapter(listBestCar, parentContext);
         adapterNearbyCar = new ProductCardViewAdapter(listNearbyCar, parentContext);
 
@@ -86,9 +98,48 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        adapterNearbyCar.notifyDataSetChanged();
-        adapterBestCar.notifyDataSetChanged();
-
+        getAllMobil();
         return view;
+    }
+
+    private void getAllMobil() {
+        String path = "/get_all_mobil";
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(RequestDatabase.ENDPOINT + path, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                for (int i=0; i < response.length(); i++) {
+                    MobilObject mobilObject = new MobilObject();
+                    JSONObject jsonObject = null;
+
+                    try {
+                        jsonObject = response.getJSONObject(i);
+                    } catch (Exception e) {}
+                    if (jsonObject == null) {return;}
+
+                    try {
+                        mobilObject.setId(jsonObject.getString("_id"));
+                        mobilObject.setMerk(jsonObject.getString("merk"));
+                        mobilObject.setJenis(jsonObject.getString("jenis"));
+                        mobilObject.setHarga(jsonObject.getString("harga"));
+                        mobilObject.setDeskripsi(jsonObject.getString("deskripsi"));
+                        mobilObject.setPlat(jsonObject.getString("plat"));
+                        mobilObject.setUrl_gambar(jsonObject.getString("url_gambar"));
+                    } catch (JSONException e) {throw new RuntimeException(e);}
+
+                    listBestCar.add(i, mobilObject);
+                    listNearbyCar.add(response.length()-1-i, mobilObject);
+
+                }
+
+                adapterBestCar.notifyDataSetChanged();
+                adapterNearbyCar.notifyDataSetChanged();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(parentContext, "" + error.networkResponse.statusCode, Toast.LENGTH_SHORT).show();
+            }
+        });
+        requestQueue.add(jsonArrayRequest);
     }
 }
