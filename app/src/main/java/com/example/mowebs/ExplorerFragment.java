@@ -77,18 +77,6 @@ public class ExplorerFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_explorer, container, false);
         recyclerView = view.findViewById(R.id.recyclerViewContentExplorer);
-        MobilObject mobilObject = new MobilObject();
-        mobilObject.setUrl_gambar("https://akcdn.detik.net.id/visual/2019/03/01/e51e8a19-128c-4f05-b259-b9b006a4e36e_169.jpeg?w=650&q=90");
-        mobilObject.setHarga("1500000");
-        mobilObject.setMerk("Ferrari");
-        mobilObject.setJenis("Dongo");
-        listMobil.add(mobilObject);
-        listMobil.add(mobilObject);
-        listMobil.add(mobilObject);
-        listMobil.add(mobilObject);
-        listMobil.add(mobilObject);
-        listMobil.add(mobilObject);
-        getAllMobil();
 
         adapter = new ProductCardViewAdapter(listMobil, parentContext);
         recyclerView.setAdapter(adapter);
@@ -107,33 +95,7 @@ public class ExplorerFragment extends Fragment {
             }
         });
 
-//        filterButtonLowPrice.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getMobilByCloserCharacter(editTextSearch.getText().toString());
-//            }
-//        });
-//
-//        filterButtonFavorite.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getMobilByCloserCharacter(editTextSearch.getText().toString());
-//            }
-//        });
-//
-//        filterButtonBestSeller.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getMobilByCloserCharacter(editTextSearch.getText().toString());
-//            }
-//        });
-//
-//        filterButtonPromo.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getMobilByCloserCharacter(editTextSearch.getText().toString());
-//            }
-//        });
+        getAllMobil();
 
         return view;
     }

@@ -73,16 +73,18 @@ public class RatingActivity extends AppCompatActivity {
         });
         getPersonalData(Preference.getUserId(RatingActivity.this));
         getMobilDetail(getIntent().getStringExtra("idm"));
-        getSewa(Preference.getUserId(RatingActivity.this));
+        getSewa(getIntent().getStringExtra("orderID"));
     }
 
-    private void getSewa(String uid) {
+    private void getSewa(String orderID) {
         String path = "/findsewabyid";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(RequestDatabase.ENDPOINT + path + "?id=" + uid, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(RequestDatabase.ENDPOINT +
+                path + "?sewaid=" + orderID, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
                     durasi.setText(response.getString("durasi"));
+                    total.setText("Rp " + response.getString("total_harga"));
                 } catch (JSONException e) {}
             }
         }, new Response.ErrorListener() {
@@ -96,16 +98,13 @@ public class RatingActivity extends AppCompatActivity {
 
     private void getMobilDetail(String mid) {
         String path = "/get_mobil_byid";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(RequestDatabase.ENDPOINT + path + "?id=" + mid, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(RequestDatabase.ENDPOINT + path
+                + "?id=" + mid, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    merk.setText(response.getString("merk"));
-                    harga.setText(response.getString("harga"));
-                    total.setText(
-                            (Integer.parseInt(response.getString("harga"))
-                                    + Integer.parseInt(total.getText().toString())) + ""
-                    );
+                    merk.setText(response.getString("merk") + " " + response.getString("jenis"));
+                    harga.setText("Rp " + response.getString("harga"));
                 } catch (JSONException e) {}
             }
         }, new Response.ErrorListener() {
@@ -119,12 +118,14 @@ public class RatingActivity extends AppCompatActivity {
 
     private void getPersonalData(String uid) {
         String path = "/getprofilebyuserid";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(RequestDatabase.ENDPOINT + path + "?uid=" + uid, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(RequestDatabase.ENDPOINT +
+                path + "?uid=" + uid, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
                     alamat.setText(response.getString("alamat"));
                     nama.setText(response.getString("nama"));
+                    Toast.makeText(RatingActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
 
                 }

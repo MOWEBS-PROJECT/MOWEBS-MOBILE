@@ -3,6 +3,7 @@ package com.example.mowebs;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Rating;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -77,6 +78,16 @@ public class OrderDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(OrderDetailActivity.this, BookingActivity.class);
                 intent.putExtra("idm", idMobil);
+                startActivity(intent);
+            }
+        });
+
+        ratingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OrderDetailActivity.this, RatingActivity.class);
+                intent.putExtra("idm", idMobil);
+                intent.putExtra("orderID", getIntent().getStringExtra("orderID"));
                 startActivity(intent);
             }
         });

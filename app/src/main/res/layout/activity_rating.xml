@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mowebs.RatingActivity"
-    tools:ignore="MissingConstraints">
+    tools:ignore="MissingConstraints"
+    android:background="#EFF1F4">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -39,7 +40,6 @@
                 android:layout_height="30dp"
                 android:background="@drawable/frame_input2"
                 android:layout_marginLeft="65dp"
-                android:text="Muhammad Sukriyatma"
                 android:paddingLeft="10dp"
                 android:paddingTop="4dp"
                 android:textSize="15sp"
@@ -63,7 +63,6 @@
                 android:layout_height="70dp"
                 android:background="@drawable/frame_input2"
                 android:layout_marginLeft="50dp"
-                android:text="Jl. Imam Bonjol No.10, RT.1/RW.7, Babakan, Kota Bogor,  Bogor Tengah, Jawa Barat, ID, 16128"
                 android:paddingLeft="10dp"
                 android:paddingTop="4dp"
                 android:textSize="15sp"
@@ -87,7 +86,6 @@
                 android:layout_height="30dp"
                 android:background="@drawable/frame_input2"
                 android:layout_marginLeft="44dp"
-                android:text="Toyota Alphard"
                 android:paddingLeft="10dp"
                 android:paddingTop="4dp"
                 android:textSize="15sp"
@@ -111,7 +109,6 @@
                 android:layout_height="30dp"
                 android:background="@drawable/frame_input2"
                 android:layout_marginLeft="47dp"
-                android:text="2"
                 android:paddingLeft="10dp"
                 android:paddingTop="4dp"
                 android:textSize="15sp"
@@ -144,7 +141,6 @@
                 android:layout_height="30dp"
                 android:background="@drawable/frame_input2"
                 android:layout_marginLeft="74dp"
-                android:text="Rp300.000"
                 android:paddingLeft="10dp"
                 android:paddingTop="4dp"
                 android:textSize="15sp"
@@ -168,7 +164,6 @@
                 android:layout_height="30dp"
                 android:background="@drawable/frame_input2"
                 android:layout_marginLeft="73dp"
-                android:text="Rp600.000"
                 android:paddingLeft="10dp"
                 android:paddingTop="4dp"
                 android:textSize="15sp"
@@ -229,7 +224,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:layout_marginLeft="120dp"
-            >
+            android:paddingVertical="2dp"
+            android:gravity="center">
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/id_cancel"
                 android:layout_width="120dp"
