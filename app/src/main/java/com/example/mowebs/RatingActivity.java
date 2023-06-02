@@ -125,7 +125,6 @@ public class RatingActivity extends AppCompatActivity {
                 try {
                     alamat.setText(response.getString("alamat"));
                     nama.setText(response.getString("nama"));
-                    Toast.makeText(RatingActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
 
                 }
