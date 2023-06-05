@@ -33,10 +33,13 @@
     },
     {
       "name": "REVIEW"
+    },
+    {
+      "name": "PROFILE"
     }
   ],
   "paths": {
-    "/get_mobil_byid{id}": {
+    "/get_mobil_byid": {
       "get": {
         "tags": [
           "MOBIL"
@@ -45,7 +48,7 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -172,7 +175,7 @@
         }
       }
     },
-    "/findusernamebyid{uid}": {
+    "/findusernamebyid": {
       "get": {
         "tags": [
           "USER"
@@ -181,7 +184,7 @@
         "parameters": [
           {
             "name": "uid",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -210,7 +213,7 @@
         }
       }
     },
-    "/getchats{uid}": {
+    "/getchats": {
       "get": {
         "tags": [
           "CHAT"
@@ -219,7 +222,7 @@
         "parameters": [
           {
             "name": "uid",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -243,7 +246,7 @@
         }
       }
     },
-    "/insertchat{uid}": {
+    "/insertchat": {
       "post": {
         "tags": [
           "CHAT"
@@ -252,7 +255,7 @@
         "parameters": [
           {
             "name": "uid",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -287,7 +290,7 @@
         }
       }
     },
-    "/updatechat{id}": {
+    "/updatechat": {
       "post": {
         "tags": [
           "CHAT"
@@ -296,7 +299,7 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -327,7 +330,7 @@
         }
       }
     },
-    "/deletechat{id}": {
+    "/deletechat": {
       "post": {
         "tags": [
           "CHAT"
@@ -336,7 +339,7 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -350,7 +353,7 @@
         }
       }
     },
-    "/findsewabyid{sewaid}": {
+    "/findsewabyid": {
       "get": {
         "tags": [
           "SEWA"
@@ -359,7 +362,7 @@
         "parameters": [
           {
             "name": "sewaid",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -380,7 +383,7 @@
         }
       }
     },
-    "/findsewa{uid}": {
+    "/findsewa": {
       "get": {
         "tags": [
           "SEWA"
@@ -389,7 +392,7 @@
         "parameters": [
           {
             "name": "uid",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -413,7 +416,7 @@
         }
       }
     },
-    "/insertsewa{uid}{mid}": {
+    "/insertsewa": {
       "post": {
         "tags": [
           "SEWA"
@@ -422,7 +425,7 @@
         "parameters": [
           {
             "name": "uid",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -430,7 +433,7 @@
           },
           {
             "name": "mid",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -453,7 +456,7 @@
         }
       }
     },
-    "/insertreview{uid}{mid}": {
+    "/insertreview": {
       "post": {
         "tags": [
           "REVIEW"
@@ -462,7 +465,7 @@
         "parameters": [
           {
             "name": "uid",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -470,7 +473,7 @@
           },
           {
             "name": "mid",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string"
@@ -492,10 +495,95 @@
           }
         }
       }
+    },
+    "/getprofilebyuserid": {
+      "get": {
+        "tags": [
+          "PROFILE"
+        ],
+        "summary": "Get a profile by user id",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BODY_UPDATE_PROFILE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update_profile": {
+      "post": {
+        "tags": [
+          "PROFILE"
+        ],
+        "summary": "Update data User",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BODY_UPDATE_PROFILE"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "BODY_UPDATE_PROFILE": {
+        "type": "object",
+        "properties": {
+          "nama": {
+            "type": "string"
+          },
+          "alamat": {
+            "type": "string"
+          },
+          "no_hp": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "jenis_kelamin": {
+            "type": "string"
+          },
+          "no_ktp": {
+            "type": "string"
+          }
+        }
+      },
       "BODY_INSERT_REVIEW": {
         "type": "object",
         "properties": {
