@@ -127,7 +127,7 @@ public class DashboardFragment extends Fragment {
                     } catch (JSONException e) {throw new RuntimeException(e);}
 
                     listBestCar.add(i, mobilObject);
-                    listNearbyCar.add(response.length()-1-i, mobilObject);
+                    listNearbyCar.add(i, mobilObject);
 
                 }
 
