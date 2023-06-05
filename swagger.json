@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "API Documentation MOWEBS Project",
-    "description": "\n[**MOWEBS**](https://github.com/MOWEBS-PROJECT/MOWEBS-MOBILE) Project:\n  - Mobile Development\n  - Web Development\n  - System Client Server\n\nTeam:\n- Muhammad Sukriyatma - J0303211141\n- Zaky Ahmad Faisal\n- Hasan Abdurrahman\n- Maryetha\n- Nova\n\n_[**Mobile Project Repository**](https://github.com/MOWEBS-PROJECT/MOWEBS-MOBILE)_",
+    "description": "\n[**MOWEBS**](https://github.com/MOWEBS-PROJECT/MOWEBS-MOBILE) Project:\n  - Mobile Development\n  - Web Development\n  - System Client Server\n\nTeam:\n- Muhammad Sukriyatma - J0303211141\n- Zaky Ahmad Faisal\n- Hasan Abdurrahman\n- Maryetha Yovanka LM.\n- Nova Sukmawati\n\n_[**Mobile Project Repository**](https://github.com/MOWEBS-PROJECT/MOWEBS-MOBILE)_",
     "termsOfService": "http://swagger.io/terms/",
     "contact": {
       "email": "sukriyatma@gmail.com"
@@ -291,7 +291,7 @@
       }
     },
     "/updatechat": {
-      "post": {
+      "put": {
         "tags": [
           "CHAT"
         ],
@@ -331,7 +331,7 @@
       }
     },
     "/deletechat": {
-      "post": {
+      "delete": {
         "tags": [
           "CHAT"
         ],
@@ -527,7 +527,7 @@
       }
     },
     "/update_profile": {
-      "post": {
+      "put": {
         "tags": [
           "PROFILE"
         ],
@@ -700,9 +700,6 @@
       "BODY_INSERT_MOBIL": {
         "type": "object",
         "properties": {
-          "_id": {
-            "type": "string"
-          },
           "deskripsi": {
             "type": "string"
           },
