@@ -104,7 +104,7 @@ public class ChatFragment extends Fragment {
 
         // Deklarasi dan inisialisasi variabel yang bertype ArrayList dengan value berbentuk ChatObject
         // Datanya diambil dari database dengan method
-//        listChat = dataSource.getAllChat();
+
         readMessage(Preference.getUserId(contextParent));
         // Inisialisasi adapter
         adapterChat = new ChatViewAdapter(listChat, contextParent, inputMessage, btnSend, editMessageContainer, recyclerViewMessage);
@@ -124,7 +124,7 @@ public class ChatFragment extends Fragment {
                 createMessage(Preference.getUserId(contextParent), value);
 
                 // Melakukan input data ke database
-//                dataSource.createChat(value, "CUSTOMER","" + date.getHours() + "." + date.getMinutes(), 0);
+//                dataSource.createChat(value, "CUSTOMER",simpleDateFormat.format(new Date()), 0);
             }
         });
 
@@ -154,7 +154,7 @@ public class ChatFragment extends Fragment {
                         adapterChat.notifyDataSetChanged();
 
                         // Melakukan input data ke database
-//                        dataSource.createChat(value, "CUSTOMER","" + date.getHours() + "." + date.getMinutes(), 0);
+//                        dataSource.createChat(value, "CUSTOMER", simpleDateFormat.format(new Date()), 0);
                     }
                 });
             }
@@ -189,7 +189,11 @@ public class ChatFragment extends Fragment {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(contextParent, "Failed to fetch Data", Toast.LENGTH_SHORT).show();
+                if (error.networkResponse.statusCode != 404) {
+                    return;
+                }
+//                listChat = dataSource.getAllChat();
+//                adapterChat.notifyDataSetChanged();
             }
         });
         requestQueue.add(jsonArrayRequest);

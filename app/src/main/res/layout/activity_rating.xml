@@ -217,7 +217,10 @@
                 android:textAlignment="center"
                 android:paddingLeft="10dp"
                 android:textSize="15sp"
-                android:textColorHighlight="#424242"/>
+                android:textColorHighlight="#424242"
+                android:inputType="text"
+                android:maxLines="999"
+                android:imeOptions="actionDone"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"

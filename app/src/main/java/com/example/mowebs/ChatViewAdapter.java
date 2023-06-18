@@ -145,7 +145,7 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
                 String messageValue = inputMessage.getText().toString();
 
                 // melakukan update ke database
-//                dataSource.updateChat(chatObject);
+//                dataSource.updateChat(chatList.get(position));
 
                 // Melakukan update pada tampilan user 
                 inputMessage.setText("");
@@ -167,7 +167,7 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
             jsonBody.put("value", messageValueUpdated);
             jsonBody.put("isupdate", true);
             String requestBody = jsonBody.toString();
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, RequestDatabase.ENDPOINT + path + "?id=" + id,
+            StringRequest stringRequest = new StringRequest(Request.Method.PUT, RequestDatabase.ENDPOINT + path + "?id=" + id,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -197,25 +197,24 @@ public class ChatViewAdapter extends RecyclerView.Adapter<ChatViewHolder> {
 
     }
 
-    // 
-//    public void deleteMessage(int position) {
-//        ChatObject chatObject = chatList.get(position);
-//
-//        // Melakukan delete item pada database
-//        dataSource = new DBDataSource(context);
-//        dataSource.open();
-//        dataSource.deleteChat(chatObject.get_id());
-//
-//        // Melakukan update pada tampilan user
-//        chatList.remove(position);
-//        notifyDataSetChanged();
-//    }
+    public void deleteMessage(int position) {
+        ChatObject chatObject = chatList.get(position);
+
+        // Melakukan delete item pada database
+        dataSource = new DBDataSource(context);
+        dataSource.open();
+        dataSource.deleteChat(chatObject.get_id());
+
+        // Melakukan update pada tampilan user
+        chatList.remove(position);
+        notifyDataSetChanged();
+    }
 
     private void deleteMessage(String id, int position) {
         String path = "/deletechat";
 
         try {
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, RequestDatabase.ENDPOINT + path + "?id=" + id,
+            StringRequest stringRequest = new StringRequest(Request.Method.DELETE, RequestDatabase.ENDPOINT + path + "?id=" + id,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {

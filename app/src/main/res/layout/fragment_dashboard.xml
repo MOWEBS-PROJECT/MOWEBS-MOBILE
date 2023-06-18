@@ -24,8 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="@string/dashboard_ek4_string"
-            />
+            android:text="@string/dashboard_ek4_string" />
 
         <EditText
             android:id="@+id/editTextSearch"

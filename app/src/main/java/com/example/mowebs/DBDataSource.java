@@ -106,7 +106,7 @@ public class DBDataSource {
             v.put(DBHelper.COLUMN_VALUE, chatObject.getValue());
             v.put(DBHelper.COLUMN_FROM, chatObject.get_from());
             v.put(DBHelper.COLUMN_DATE, chatObject.getDate());
-            v.put(DBHelper.COLUMN_ISUPDATED, isupdated);
+            v.put(DBHelper.COLUMN_ISUPDATED, 1);
 
             database.update(DBHelper.TABLE_NAME, v, s, null);
     }

@@ -74,7 +74,7 @@ import java.util.Map;
 			public void onClick(View view) {
 				Intent intent = new Intent(SignInActivity.this, RegisterActivity.class);
 				startActivity(intent);
-//				finish();
+				finish();
 
 			}
 		});

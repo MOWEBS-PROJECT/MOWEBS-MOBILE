@@ -79,7 +79,10 @@
                     android:textSize="14sp"
                     android:padding="12dp"
                     android:textColor="#000000"
-                    android:textColorHint="#C2C2C2" />
+                    android:textColorHint="#C2C2C2"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:imeOptions="actionSearch"/>
 
                 <Button
                     android:layout_width="0dp"

@@ -4,7 +4,7 @@
 	android:layout_height="match_parent"
 	tools:context="com.example.mowebs.SignInActivity"
 	android:orientation="vertical"
-	android:background="#969EAB">
+	android:background="#EFF1F4">
 
 	<TextView
 		android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
 		android:textSize="40dp"
 		android:fontFamily="@font/poppins_semi_bold"
 		android:layout_gravity="center"
-		android:textColor="#FFFFFF"
+		android:textColor="#636363"
 		android:id="@+id/tv_regis"/>
 
 
@@ -55,7 +55,8 @@
 			android:background="@null"
 			android:padding="10dp"
 			android:imeOptions="actionDone"
-			android:maxLines="1" />
+			android:maxLines="1"
+			android:inputType="text"/>
 	</LinearLayout>
 
 	<LinearLayout
@@ -86,7 +87,7 @@
 			android:inputType="textPassword"
 			android:imeOptions="actionDone"
 			android:maxLines="1"
-			android:cursorVisible="false"/>
+			android:cursorVisible="false" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -119,7 +120,7 @@
 			android:layout_height="wrap_content"
 			android:layout_marginTop="1dp"
 			android:text="Don't have an account?"
-			android:textColor="#FFFFFF"
+			android:textColor="#A1A1A1"
 			android:textSize="12dp" />
 
 		<androidx.appcompat.widget.AppCompatButton

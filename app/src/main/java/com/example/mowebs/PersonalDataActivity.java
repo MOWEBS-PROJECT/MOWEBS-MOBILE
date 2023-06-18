@@ -85,7 +85,7 @@ public class PersonalDataActivity extends AppCompatActivity {
                     editTextFullname.setText(response.getString("nama"));
                     editTextPhone.setText(response.getString("no_hp"));
                     spinnerGender.setSelection(
-                            (response.getString("jenis_kelamin") == "Male")? 1 : 0
+                            (response.getString("jenis_kelamin").equals("male"))? 0 : 1
                     );
                 } catch (Exception e) {
 
@@ -111,11 +111,11 @@ public class PersonalDataActivity extends AppCompatActivity {
             jsonBody.put("alamat",  editTextAddress.getText().toString());
             jsonBody.put("no_hp",   editTextPhone.getText().toString());
             jsonBody.put("email",   editTextEmail.getText().toString());
-            jsonBody.put("jenis_kelamin",   spinnerGender.getSelectedItem().toString());
+            jsonBody.put("jenis_kelamin",   spinnerGender.getSelectedItem().toString().toLowerCase());
             jsonBody.put("no_ktp",  editTextKTP.getText().toString());
             String requestBody = jsonBody.toString();
 
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, RequestDatabase.ENDPOINT + path + "?uid=" + uid,
+            StringRequest stringRequest = new StringRequest(Request.Method.PUT, RequestDatabase.ENDPOINT + path + "?uid=" + uid,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
